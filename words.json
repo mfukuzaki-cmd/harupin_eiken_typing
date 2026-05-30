@@ -1,0 +1,4003 @@
+{
+  "pre2": [
+    {
+      "en": "accept",
+      "ja": "〜を受け入れる",
+      "chapter": 1
+    },
+    {
+      "en": "admire",
+      "ja": "〜に感嘆する",
+      "chapter": 2
+    },
+    {
+      "en": "advise",
+      "ja": "〜に助言する",
+      "chapter": 3
+    },
+    {
+      "en": "afford",
+      "ja": "〜する余裕がある",
+      "chapter": 4
+    },
+    {
+      "en": "agree",
+      "ja": "同意する",
+      "chapter": 5
+    },
+    {
+      "en": "allow",
+      "ja": "〜を許可する",
+      "chapter": 6
+    },
+    {
+      "en": "appear",
+      "ja": "現れる",
+      "chapter": 7
+    },
+    {
+      "en": "apply",
+      "ja": "申し込む、適用する",
+      "chapter": 8
+    },
+    {
+      "en": "argue",
+      "ja": "主張する、議論する",
+      "chapter": 9
+    },
+    {
+      "en": "arrive",
+      "ja": "到着する",
+      "chapter": 10
+    },
+    {
+      "en": "attend",
+      "ja": "〜に出席する",
+      "chapter": 1
+    },
+    {
+      "en": "attract",
+      "ja": "〜を引きつける",
+      "chapter": 2
+    },
+    {
+      "en": "avoid",
+      "ja": "〜を避ける",
+      "chapter": 3
+    },
+    {
+      "en": "belong",
+      "ja": "所属する",
+      "chapter": 4
+    },
+    {
+      "en": "borrow",
+      "ja": "〜を借りる",
+      "chapter": 5
+    },
+    {
+      "en": "bother",
+      "ja": "〜を悩ませる",
+      "chapter": 6
+    },
+    {
+      "en": "cancel",
+      "ja": "〜を取り消す",
+      "chapter": 7
+    },
+    {
+      "en": "choose",
+      "ja": "〜を選ぶ",
+      "chapter": 8
+    },
+    {
+      "en": "compare",
+      "ja": "〜を比較する",
+      "chapter": 9
+    },
+    {
+      "en": "compete",
+      "ja": "競争する",
+      "chapter": 10
+    },
+    {
+      "en": "complain",
+      "ja": "不平を言う",
+      "chapter": 1
+    },
+    {
+      "en": "create",
+      "ja": "〜を創造する",
+      "chapter": 2
+    },
+    {
+      "en": "decide",
+      "ja": "〜を決心する",
+      "chapter": 3
+    },
+    {
+      "en": "deliver",
+      "ja": "〜を配達する",
+      "chapter": 4
+    },
+    {
+      "en": "depend",
+      "ja": "依存する",
+      "chapter": 5
+    },
+    {
+      "en": "describe",
+      "ja": "〜を描写する",
+      "chapter": 6
+    },
+    {
+      "en": "design",
+      "ja": "〜を設計する",
+      "chapter": 7
+    },
+    {
+      "en": "develop",
+      "ja": "〜を発展させる",
+      "chapter": 8
+    },
+    {
+      "en": "disappear",
+      "ja": "消え去る",
+      "chapter": 9
+    },
+    {
+      "en": "discover",
+      "ja": "〜を発見する",
+      "chapter": 10
+    },
+    {
+      "en": "discuss",
+      "ja": "〜について話し合う",
+      "chapter": 1
+    },
+    {
+      "en": "earn",
+      "ja": "〜を稼ぐ",
+      "chapter": 2
+    },
+    {
+      "en": "encourage",
+      "ja": "〜を励ます",
+      "chapter": 3
+    },
+    {
+      "en": "enjoy",
+      "ja": "〜を楽しむ",
+      "chapter": 4
+    },
+    {
+      "en": "enter",
+      "ja": "〜に入る",
+      "chapter": 5
+    },
+    {
+      "en": "escape",
+      "ja": "逃げる",
+      "chapter": 6
+    },
+    {
+      "en": "expect",
+      "ja": "〜を期待する",
+      "chapter": 7
+    },
+    {
+      "en": "explain",
+      "ja": "〜を説明する",
+      "chapter": 8
+    },
+    {
+      "en": "explore",
+      "ja": "〜を探検する",
+      "chapter": 9
+    },
+    {
+      "en": "express",
+      "ja": "〜を表現する",
+      "chapter": 10
+    },
+    {
+      "en": "follow",
+      "ja": "〜に従う",
+      "chapter": 1
+    },
+    {
+      "en": "forget",
+      "ja": "〜を忘れる",
+      "chapter": 2
+    },
+    {
+      "en": "gather",
+      "ja": "〜を集める",
+      "chapter": 3
+    },
+    {
+      "en": "happen",
+      "ja": "起こる",
+      "chapter": 4
+    },
+    {
+      "en": "ignore",
+      "ja": "〜を無視する",
+      "chapter": 5
+    },
+    {
+      "en": "imagine",
+      "ja": "〜を想像する",
+      "chapter": 6
+    },
+    {
+      "en": "improve",
+      "ja": "〜を改善する",
+      "chapter": 7
+    },
+    {
+      "en": "include",
+      "ja": "〜を含む",
+      "chapter": 8
+    },
+    {
+      "en": "increase",
+      "ja": "増加する",
+      "chapter": 9
+    },
+    {
+      "en": "invent",
+      "ja": "〜を発明する",
+      "chapter": 10
+    },
+    {
+      "en": "action",
+      "ja": "行動",
+      "chapter": 1
+    },
+    {
+      "en": "activity",
+      "ja": "活動",
+      "chapter": 2
+    },
+    {
+      "en": "advice",
+      "ja": "助言、アドバイス",
+      "chapter": 3
+    },
+    {
+      "en": "amount",
+      "ja": "量、額",
+      "chapter": 4
+    },
+    {
+      "en": "behavior",
+      "ja": "行動、振る舞い",
+      "chapter": 5
+    },
+    {
+      "en": "benefit",
+      "ja": "利益、恩恵",
+      "chapter": 6
+    },
+    {
+      "en": "career",
+      "ja": "経歴、キャリア",
+      "chapter": 7
+    },
+    {
+      "en": "century",
+      "ja": "1世紀、100年",
+      "chapter": 8
+    },
+    {
+      "en": "challenge",
+      "ja": "挑戦、課題",
+      "chapter": 9
+    },
+    {
+      "en": "choice",
+      "ja": "選択",
+      "chapter": 10
+    },
+    {
+      "en": "climate",
+      "ja": "気候",
+      "chapter": 1
+    },
+    {
+      "en": "community",
+      "ja": "地域社会",
+      "chapter": 2
+    },
+    {
+      "en": "company",
+      "ja": "会社",
+      "chapter": 3
+    },
+    {
+      "en": "culture",
+      "ja": "文化",
+      "chapter": 4
+    },
+    {
+      "en": "customer",
+      "ja": "顧客、客",
+      "chapter": 5
+    },
+    {
+      "en": "damage",
+      "ja": "損害、ダメージ",
+      "chapter": 6
+    },
+    {
+      "en": "danger",
+      "ja": "危険",
+      "chapter": 7
+    },
+    {
+      "en": "decision",
+      "ja": "決定、決断",
+      "chapter": 8
+    },
+    {
+      "en": "difference",
+      "ja": "違い",
+      "chapter": 9
+    },
+    {
+      "en": "disease",
+      "ja": "病気",
+      "chapter": 10
+    },
+    {
+      "en": "distance",
+      "ja": "距離",
+      "chapter": 1
+    },
+    {
+      "en": "education",
+      "ja": "教育",
+      "chapter": 2
+    },
+    {
+      "en": "effect",
+      "ja": "影響、効果",
+      "chapter": 3
+    },
+    {
+      "en": "effort",
+      "ja": "努力",
+      "chapter": 4
+    },
+    {
+      "en": "energy",
+      "ja": "エネルギー",
+      "chapter": 5
+    },
+    {
+      "en": "environment",
+      "ja": "環境",
+      "chapter": 6
+    },
+    {
+      "en": "event",
+      "ja": "行事、イベント",
+      "chapter": 7
+    },
+    {
+      "en": "example",
+      "ja": "例",
+      "chapter": 8
+    },
+    {
+      "en": "experience",
+      "ja": "経験",
+      "chapter": 9
+    },
+    {
+      "en": "expert",
+      "ja": "専門家",
+      "chapter": 10
+    },
+    {
+      "en": "factory",
+      "ja": "工場",
+      "chapter": 1
+    },
+    {
+      "en": "fashion",
+      "ja": "流行、ファッション",
+      "chapter": 2
+    },
+    {
+      "en": "government",
+      "ja": "政府",
+      "chapter": 3
+    },
+    {
+      "en": "habit",
+      "ja": "習慣",
+      "chapter": 4
+    },
+    {
+      "en": "health",
+      "ja": "健康",
+      "chapter": 5
+    },
+    {
+      "en": "history",
+      "ja": "歴史",
+      "chapter": 6
+    },
+    {
+      "en": "hobby",
+      "ja": "趣味",
+      "chapter": 7
+    },
+    {
+      "en": "information",
+      "ja": "情報",
+      "chapter": 8
+    },
+    {
+      "en": "island",
+      "ja": "島",
+      "chapter": 9
+    },
+    {
+      "en": "journey",
+      "ja": "旅",
+      "chapter": 10
+    },
+    {
+      "en": "knowledge",
+      "ja": "知識",
+      "chapter": 1
+    },
+    {
+      "en": "language",
+      "ja": "言語",
+      "chapter": 2
+    },
+    {
+      "en": "leader",
+      "ja": "指導者、リーダー",
+      "chapter": 3
+    },
+    {
+      "en": "market",
+      "ja": "市場",
+      "chapter": 4
+    },
+    {
+      "en": "memory",
+      "ja": "記憶",
+      "chapter": 5
+    },
+    {
+      "en": "nature",
+      "ja": "自然",
+      "chapter": 6
+    },
+    {
+      "en": "neighbor",
+      "ja": "近所の人、隣人",
+      "chapter": 7
+    },
+    {
+      "en": "opinion",
+      "ja": "意見",
+      "chapter": 8
+    },
+    {
+      "en": "opportunity",
+      "ja": "機会、チャンス",
+      "chapter": 9
+    },
+    {
+      "en": "population",
+      "ja": "人口",
+      "chapter": 10
+    },
+    {
+      "en": "active",
+      "ja": "活動的な",
+      "chapter": 1
+    },
+    {
+      "en": "actual",
+      "ja": "実際の",
+      "chapter": 2
+    },
+    {
+      "en": "ancient",
+      "ja": "古代の",
+      "chapter": 3
+    },
+    {
+      "en": "annual",
+      "ja": "年に一度の",
+      "chapter": 4
+    },
+    {
+      "en": "anxious",
+      "ja": "心配して、切望して",
+      "chapter": 5
+    },
+    {
+      "en": "automatic",
+      "ja": "自動の",
+      "chapter": 6
+    },
+    {
+      "en": "average",
+      "ja": "平均の",
+      "chapter": 7
+    },
+    {
+      "en": "basic",
+      "ja": "基本的な",
+      "chapter": 8
+    },
+    {
+      "en": "beautiful",
+      "ja": "美しい",
+      "chapter": 9
+    },
+    {
+      "en": "careful",
+      "ja": "注意深い",
+      "chapter": 10
+    },
+    {
+      "en": "cheap",
+      "ja": "安い",
+      "chapter": 1
+    },
+    {
+      "en": "chemical",
+      "ja": "化学の",
+      "chapter": 2
+    },
+    {
+      "en": "clear",
+      "ja": "明らかな、澄んだ",
+      "chapter": 3
+    },
+    {
+      "en": "comfortable",
+      "ja": "快適な",
+      "chapter": 4
+    },
+    {
+      "en": "common",
+      "ja": "共通の、普通の",
+      "chapter": 5
+    },
+    {
+      "en": "creative",
+      "ja": "創造的な",
+      "chapter": 6
+    },
+    {
+      "en": "daily",
+      "ja": "日常の",
+      "chapter": 7
+    },
+    {
+      "en": "delicious",
+      "ja": "美味しい",
+      "chapter": 8
+    },
+    {
+      "en": "different",
+      "ja": "異なる",
+      "chapter": 9
+    },
+    {
+      "en": "difficult",
+      "ja": "難しい",
+      "chapter": 10
+    },
+    {
+      "en": "double",
+      "ja": "2倍の",
+      "chapter": 1
+    },
+    {
+      "en": "early",
+      "ja": "早い",
+      "chapter": 2
+    },
+    {
+      "en": "easy",
+      "ja": "簡単な",
+      "chapter": 3
+    },
+    {
+      "en": "economic",
+      "ja": "経済の",
+      "chapter": 4
+    },
+    {
+      "en": "electric",
+      "ja": "電気の",
+      "chapter": 5
+    },
+    {
+      "en": "equal",
+      "ja": "等しい",
+      "chapter": 6
+    },
+    {
+      "en": "essential",
+      "ja": "不可欠な",
+      "chapter": 7
+    },
+    {
+      "en": "famous",
+      "ja": "有名な",
+      "chapter": 8
+    },
+    {
+      "en": "familiar",
+      "ja": "なじみのある",
+      "chapter": 9
+    },
+    {
+      "en": "favorite",
+      "ja": "お気に入りの",
+      "chapter": 10
+    },
+    {
+      "en": "foreign",
+      "ja": "外国の",
+      "chapter": 1
+    },
+    {
+      "en": "friendly",
+      "ja": "親しみやすい",
+      "chapter": 2
+    },
+    {
+      "en": "general",
+      "ja": "一般的な",
+      "chapter": 3
+    },
+    {
+      "en": "global",
+      "ja": "地球規模の",
+      "chapter": 4
+    },
+    {
+      "en": "healthy",
+      "ja": "健康的な",
+      "chapter": 5
+    },
+    {
+      "en": "honest",
+      "ja": "正直な",
+      "chapter": 6
+    },
+    {
+      "en": "huge",
+      "ja": "巨大な",
+      "chapter": 7
+    },
+    {
+      "en": "important",
+      "ja": "重要な",
+      "chapter": 8
+    },
+    {
+      "en": "impossible",
+      "ja": "不可能な",
+      "chapter": 9
+    },
+    {
+      "en": "local",
+      "ja": "地元の",
+      "chapter": 10
+    },
+    {
+      "en": "modern",
+      "ja": "現代の",
+      "chapter": 1
+    },
+    {
+      "en": "natural",
+      "ja": "自然の",
+      "chapter": 2
+    },
+    {
+      "en": "necessary",
+      "ja": "必要な",
+      "chapter": 3
+    },
+    {
+      "en": "official",
+      "ja": "公式の",
+      "chapter": 4
+    },
+    {
+      "en": "popular",
+      "ja": "人気のある",
+      "chapter": 5
+    },
+    {
+      "en": "scientific",
+      "ja": "科学的な",
+      "chapter": 6
+    },
+    {
+      "en": "simple",
+      "ja": "簡単な、単純な",
+      "chapter": 7
+    },
+    {
+      "en": "traditional",
+      "ja": "伝統的な",
+      "chapter": 8
+    },
+    {
+      "en": "useful",
+      "ja": "役に立つ",
+      "chapter": 9
+    },
+    {
+      "en": "various",
+      "ja": "様々な",
+      "chapter": 10
+    },
+    {
+      "en": "achieve",
+      "ja": "〜を達成する",
+      "chapter": 1
+    },
+    {
+      "en": "act",
+      "ja": "行動する",
+      "chapter": 2
+    },
+    {
+      "en": "add",
+      "ja": "〜を加える",
+      "chapter": 3
+    },
+    {
+      "en": "admit",
+      "ja": "〜を認める",
+      "chapter": 4
+    },
+    {
+      "en": "affect",
+      "ja": "〜に影響する",
+      "chapter": 5
+    },
+    {
+      "en": "aim",
+      "ja": "目指す",
+      "chapter": 6
+    },
+    {
+      "en": "announce",
+      "ja": "〜を発表する",
+      "chapter": 7
+    },
+    {
+      "en": "apologize",
+      "ja": "謝罪する",
+      "chapter": 8
+    },
+    {
+      "en": "approach",
+      "ja": "〜に近づく",
+      "chapter": 9
+    },
+    {
+      "en": "approve",
+      "ja": "〜を承認する",
+      "chapter": 10
+    },
+    {
+      "en": "arrange",
+      "ja": "〜を手配する、整える",
+      "chapter": 1
+    },
+    {
+      "en": "assume",
+      "ja": "〜と仮定する",
+      "chapter": 2
+    },
+    {
+      "en": "attack",
+      "ja": "〜を攻撃する",
+      "chapter": 3
+    },
+    {
+      "en": "attempt",
+      "ja": "〜を試みる",
+      "chapter": 4
+    },
+    {
+      "en": "base",
+      "ja": "〜の基礎を置く",
+      "chapter": 5
+    },
+    {
+      "en": "bear",
+      "ja": "〜を耐える、産む",
+      "chapter": 6
+    },
+    {
+      "en": "beat",
+      "ja": "〜を打ち負かす",
+      "chapter": 7
+    },
+    {
+      "en": "become",
+      "ja": "〜になる",
+      "chapter": 8
+    },
+    {
+      "en": "begin",
+      "ja": "始まる、〜を始める",
+      "chapter": 9
+    },
+    {
+      "en": "behave",
+      "ja": "振る舞う",
+      "chapter": 10
+    },
+    {
+      "en": "bend",
+      "ja": "〜を曲げる",
+      "chapter": 1
+    },
+    {
+      "en": "bet",
+      "ja": "〜を賭ける",
+      "chapter": 2
+    },
+    {
+      "en": "bite",
+      "ja": "〜を噛む",
+      "chapter": 3
+    },
+    {
+      "en": "blame",
+      "ja": "〜を非難する",
+      "chapter": 4
+    },
+    {
+      "en": "blow",
+      "ja": "吹く",
+      "chapter": 5
+    },
+    {
+      "en": "bow",
+      "ja": "お辞儀する",
+      "chapter": 6
+    },
+    {
+      "en": "break",
+      "ja": "〜を壊す",
+      "chapter": 7
+    },
+    {
+      "en": "breathe",
+      "ja": "呼吸する",
+      "chapter": 8
+    },
+    {
+      "en": "bring",
+      "ja": "〜を持ってくる",
+      "chapter": 9
+    },
+    {
+      "en": "build",
+      "ja": "〜を建てる",
+      "chapter": 10
+    },
+    {
+      "en": "burn",
+      "ja": "燃える、〜を燃やす",
+      "chapter": 1
+    },
+    {
+      "en": "burst",
+      "ja": "破裂する",
+      "chapter": 2
+    },
+    {
+      "en": "bury",
+      "ja": "〜を埋める",
+      "chapter": 3
+    },
+    {
+      "en": "buy",
+      "ja": "〜を買う",
+      "chapter": 4
+    },
+    {
+      "en": "call",
+      "ja": "〜と呼ぶ、電話する",
+      "chapter": 5
+    },
+    {
+      "en": "camp",
+      "ja": "キャンプする",
+      "chapter": 6
+    },
+    {
+      "en": "care",
+      "ja": "気にする、世話をする",
+      "chapter": 7
+    },
+    {
+      "en": "carry",
+      "ja": "〜を運ぶ",
+      "chapter": 8
+    },
+    {
+      "en": "catch",
+      "ja": "〜を捕まえる",
+      "chapter": 9
+    },
+    {
+      "en": "cause",
+      "ja": "〜を引き起こす",
+      "chapter": 10
+    },
+    {
+      "en": "celebrate",
+      "ja": "〜を祝う",
+      "chapter": 1
+    },
+    {
+      "en": "change",
+      "ja": "〜を変える",
+      "chapter": 2
+    },
+    {
+      "en": "charge",
+      "ja": "〜を請求する",
+      "chapter": 3
+    },
+    {
+      "en": "chase",
+      "ja": "〜を追いかける",
+      "chapter": 4
+    },
+    {
+      "en": "chat",
+      "ja": "おしゃべりする",
+      "chapter": 5
+    },
+    {
+      "en": "check",
+      "ja": "〜を確認する",
+      "chapter": 6
+    },
+    {
+      "en": "cheer",
+      "ja": "〜を元気づける",
+      "chapter": 7
+    },
+    {
+      "en": "claim",
+      "ja": "〜を主張する",
+      "chapter": 8
+    },
+    {
+      "en": "clean",
+      "ja": "〜をきれいにする",
+      "chapter": 9
+    },
+    {
+      "en": "climb",
+      "ja": "〜に登る",
+      "chapter": 10
+    },
+    {
+      "en": "close",
+      "ja": "〜を閉じる",
+      "chapter": 1
+    },
+    {
+      "en": "collect",
+      "ja": "〜を集める",
+      "chapter": 2
+    },
+    {
+      "en": "combine",
+      "ja": "〜を組み合わせる",
+      "chapter": 3
+    },
+    {
+      "en": "come",
+      "ja": "来る",
+      "chapter": 4
+    },
+    {
+      "en": "command",
+      "ja": "〜を命令する",
+      "chapter": 5
+    },
+    {
+      "en": "communicate",
+      "ja": "意思疎通する",
+      "chapter": 6
+    },
+    {
+      "en": "complete",
+      "ja": "〜を完成させる",
+      "chapter": 7
+    },
+    {
+      "en": "concentrate",
+      "ja": "集中する",
+      "chapter": 8
+    },
+    {
+      "en": "concern",
+      "ja": "〜を心配させる",
+      "chapter": 9
+    },
+    {
+      "en": "conclude",
+      "ja": "〜と結論づける",
+      "chapter": 10
+    },
+    {
+      "en": "conduct",
+      "ja": "〜を行う",
+      "chapter": 1
+    },
+    {
+      "en": "connect",
+      "ja": "〜をつなぐ",
+      "chapter": 2
+    },
+    {
+      "en": "consider",
+      "ja": "〜を考慮する",
+      "chapter": 3
+    },
+    {
+      "en": "consist",
+      "ja": "〜から成る",
+      "chapter": 4
+    },
+    {
+      "en": "contain",
+      "ja": "〜を含む",
+      "chapter": 5
+    },
+    {
+      "en": "continue",
+      "ja": "〜を続ける",
+      "chapter": 6
+    },
+    {
+      "en": "control",
+      "ja": "〜を支配する",
+      "chapter": 7
+    },
+    {
+      "en": "convert",
+      "ja": "〜を変換する",
+      "chapter": 8
+    },
+    {
+      "en": "convey",
+      "ja": "〜を伝える",
+      "chapter": 9
+    },
+    {
+      "en": "convince",
+      "ja": "〜を確信させる",
+      "chapter": 10
+    },
+    {
+      "en": "cook",
+      "ja": "料理する",
+      "chapter": 1
+    },
+    {
+      "en": "cooperate",
+      "ja": "協力する",
+      "chapter": 2
+    },
+    {
+      "en": "cope",
+      "ja": "うまく対処する",
+      "chapter": 3
+    },
+    {
+      "en": "copy",
+      "ja": "〜をコピーする",
+      "chapter": 4
+    },
+    {
+      "en": "correct",
+      "ja": "〜を訂正する",
+      "chapter": 5
+    },
+    {
+      "en": "cost",
+      "ja": "〜の費用がかかる",
+      "chapter": 6
+    },
+    {
+      "en": "cough",
+      "ja": "咳をする",
+      "chapter": 7
+    },
+    {
+      "en": "count",
+      "ja": "〜を数える",
+      "chapter": 8
+    },
+    {
+      "en": "cover",
+      "ja": "〜を覆う",
+      "chapter": 9
+    },
+    {
+      "en": "cross",
+      "ja": "〜を横切る",
+      "chapter": 10
+    },
+    {
+      "en": "cry",
+      "ja": "泣く、叫ぶ",
+      "chapter": 1
+    },
+    {
+      "en": "cut",
+      "ja": "〜を切る",
+      "chapter": 2
+    },
+    {
+      "en": "dance",
+      "ja": "踊る",
+      "chapter": 3
+    },
+    {
+      "en": "deal",
+      "ja": "扱う、処理する",
+      "chapter": 4
+    },
+    {
+      "en": "debate",
+      "ja": "討論する",
+      "chapter": 5
+    },
+    {
+      "en": "declare",
+      "ja": "〜を宣言する",
+      "chapter": 6
+    },
+    {
+      "en": "decline",
+      "ja": "衰退する、断る",
+      "chapter": 7
+    },
+    {
+      "en": "decorate",
+      "ja": "〜を飾る",
+      "chapter": 8
+    },
+    {
+      "en": "decrease",
+      "ja": "減少する",
+      "chapter": 9
+    },
+    {
+      "en": "defeat",
+      "ja": "〜を打ち負かす",
+      "chapter": 10
+    },
+    {
+      "en": "defend",
+      "ja": "〜を守る",
+      "chapter": 1
+    },
+    {
+      "en": "define",
+      "ja": "〜を定義する",
+      "chapter": 2
+    },
+    {
+      "en": "delay",
+      "ja": "〜を遅らせる",
+      "chapter": 3
+    },
+    {
+      "en": "demand",
+      "ja": "〜を要求する",
+      "chapter": 4
+    },
+    {
+      "en": "demonstrate",
+      "ja": "〜を実演する、証明する",
+      "chapter": 5
+    },
+    {
+      "en": "deny",
+      "ja": "〜を否定する",
+      "chapter": 6
+    },
+    {
+      "en": "depart",
+      "ja": "出発する",
+      "chapter": 7
+    },
+    {
+      "en": "deserve",
+      "ja": "〜に値する",
+      "chapter": 8
+    },
+    {
+      "en": "detect",
+      "ja": "〜を検出する",
+      "chapter": 9
+    },
+    {
+      "en": "determine",
+      "ja": "〜を決定する",
+      "chapter": 10
+    },
+    {
+      "en": "dislike",
+      "ja": "〜を嫌う",
+      "chapter": 1
+    },
+    {
+      "en": "divide",
+      "ja": "〜を分割する",
+      "chapter": 2
+    },
+    {
+      "en": "doubt",
+      "ja": "〜を疑う",
+      "chapter": 3
+    },
+    {
+      "en": "drag",
+      "ja": "〜を引きずる",
+      "chapter": 4
+    },
+    {
+      "en": "draw",
+      "ja": "〜を描く、引く",
+      "chapter": 5
+    },
+    {
+      "en": "dress",
+      "ja": "服を着る",
+      "chapter": 6
+    },
+    {
+      "en": "drink",
+      "ja": "〜を飲む",
+      "chapter": 7
+    },
+    {
+      "en": "drive",
+      "ja": "運転する",
+      "chapter": 8
+    },
+    {
+      "en": "drop",
+      "ja": "〜を落とす",
+      "chapter": 9
+    },
+    {
+      "en": "dry",
+      "ja": "乾く、〜を乾かす",
+      "chapter": 10
+    },
+    {
+      "en": "employ",
+      "ja": "〜を雇う",
+      "chapter": 1
+    },
+    {
+      "en": "end",
+      "ja": "終わる",
+      "chapter": 2
+    },
+    {
+      "en": "engage",
+      "ja": "従事する",
+      "chapter": 3
+    },
+    {
+      "en": "enhance",
+      "ja": "〜を高める",
+      "chapter": 4
+    },
+    {
+      "en": "ensure",
+      "ja": "〜を確実にする",
+      "chapter": 5
+    },
+    {
+      "en": "establish",
+      "ja": "〜を設立する",
+      "chapter": 6
+    },
+    {
+      "en": "estimate",
+      "ja": "〜を見積もる",
+      "chapter": 7
+    },
+    {
+      "en": "accident",
+      "ja": "事故",
+      "chapter": 8
+    },
+    {
+      "en": "account",
+      "ja": "口座、説明",
+      "chapter": 9
+    },
+    {
+      "en": "actor",
+      "ja": "俳優",
+      "chapter": 10
+    },
+    {
+      "en": "address",
+      "ja": "住所",
+      "chapter": 1
+    },
+    {
+      "en": "advantage",
+      "ja": "利点",
+      "chapter": 2
+    },
+    {
+      "en": "adventure",
+      "ja": "冒険",
+      "chapter": 3
+    },
+    {
+      "en": "advertising",
+      "ja": "広告",
+      "chapter": 4
+    },
+    {
+      "en": "agent",
+      "ja": "代理人",
+      "chapter": 5
+    },
+    {
+      "en": "agreement",
+      "ja": "合意、協定",
+      "chapter": 6
+    },
+    {
+      "en": "agriculture",
+      "ja": "農業",
+      "chapter": 7
+    },
+    {
+      "en": "airline",
+      "ja": "航空会社",
+      "chapter": 8
+    },
+    {
+      "en": "airport",
+      "ja": "空港",
+      "chapter": 9
+    },
+    {
+      "en": "alarm",
+      "ja": "目覚まし時計、警報",
+      "chapter": 10
+    },
+    {
+      "en": "alcohol",
+      "ja": "アルコール",
+      "chapter": 1
+    },
+    {
+      "en": "allergy",
+      "ja": "アレルギー",
+      "chapter": 2
+    },
+    {
+      "en": "ambulance",
+      "ja": "救急車",
+      "chapter": 3
+    },
+    {
+      "en": "ancestor",
+      "ja": "先祖",
+      "chapter": 4
+    },
+    {
+      "en": "angle",
+      "ja": "角度",
+      "chapter": 5
+    },
+    {
+      "en": "animal",
+      "ja": "動物",
+      "chapter": 6
+    },
+    {
+      "en": "answer",
+      "ja": "答え",
+      "chapter": 7
+    },
+    {
+      "en": "apartment",
+      "ja": "アパート",
+      "chapter": 8
+    },
+    {
+      "en": "appearance",
+      "ja": "外見、出現",
+      "chapter": 9
+    },
+    {
+      "en": "appetite",
+      "ja": "食欲",
+      "chapter": 10
+    },
+    {
+      "en": "applause",
+      "ja": "拍手",
+      "chapter": 1
+    },
+    {
+      "en": "apple",
+      "ja": "リンゴ",
+      "chapter": 2
+    },
+    {
+      "en": "application",
+      "ja": "申請、アプリ",
+      "chapter": 3
+    },
+    {
+      "en": "appointment",
+      "ja": "約束、予約",
+      "chapter": 4
+    },
+    {
+      "en": "apron",
+      "ja": "エプロン",
+      "chapter": 5
+    },
+    {
+      "en": "aquarium",
+      "ja": "水族館",
+      "chapter": 6
+    },
+    {
+      "en": "area",
+      "ja": "地域、面積",
+      "chapter": 7
+    },
+    {
+      "en": "argument",
+      "ja": "議論、主張",
+      "chapter": 8
+    },
+    {
+      "en": "army",
+      "ja": "軍隊",
+      "chapter": 9
+    },
+    {
+      "en": "art",
+      "ja": "芸術、美術",
+      "chapter": 10
+    },
+    {
+      "en": "article",
+      "ja": "記事、品物",
+      "chapter": 1
+    },
+    {
+      "en": "artist",
+      "ja": "芸術家",
+      "chapter": 2
+    },
+    {
+      "en": "ash",
+      "ja": "灰",
+      "chapter": 3
+    },
+    {
+      "en": "aspect",
+      "ja": "側面、アスペクト",
+      "chapter": 4
+    },
+    {
+      "en": "assistant",
+      "ja": "助手",
+      "chapter": 5
+    },
+    {
+      "en": "association",
+      "ja": "協会、関連",
+      "chapter": 6
+    },
+    {
+      "en": "athlete",
+      "ja": "アスリート、運動選手",
+      "chapter": 7
+    },
+    {
+      "en": "atmosphere",
+      "ja": "大気、雰囲気",
+      "chapter": 8
+    },
+    {
+      "en": "attention",
+      "ja": "注意",
+      "chapter": 9
+    },
+    {
+      "en": "attitude",
+      "ja": "態度",
+      "chapter": 10
+    },
+    {
+      "en": "attraction",
+      "ja": "アトラクション、魅力",
+      "chapter": 1
+    },
+    {
+      "en": "audience",
+      "ja": "聴衆、観客",
+      "chapter": 2
+    },
+    {
+      "en": "author",
+      "ja": "著者、作家",
+      "chapter": 3
+    },
+    {
+      "en": "authority",
+      "ja": "権威、当局",
+      "chapter": 4
+    },
+    {
+      "en": "autumn",
+      "ja": "秋",
+      "chapter": 5
+    },
+    {
+      "en": "avenue",
+      "ja": "大通り",
+      "chapter": 6
+    },
+    {
+      "en": "award",
+      "ja": "賞",
+      "chapter": 7
+    },
+    {
+      "en": "baby",
+      "ja": "赤ちゃん",
+      "chapter": 8
+    },
+    {
+      "en": "background",
+      "ja": "背景",
+      "chapter": 9
+    },
+    {
+      "en": "backpack",
+      "ja": "バックパック",
+      "chapter": 10
+    },
+    {
+      "en": "baggage",
+      "ja": "手荷物",
+      "chapter": 1
+    },
+    {
+      "en": "bakery",
+      "ja": "パン屋",
+      "chapter": 2
+    },
+    {
+      "en": "balance",
+      "ja": "バランス",
+      "chapter": 3
+    },
+    {
+      "en": "balloon",
+      "ja": "風船",
+      "chapter": 4
+    },
+    {
+      "en": "band",
+      "ja": "バンド、帯",
+      "chapter": 5
+    },
+    {
+      "en": "bank",
+      "ja": "銀行、土手",
+      "chapter": 6
+    },
+    {
+      "en": "barber",
+      "ja": "理髪師",
+      "chapter": 7
+    },
+    {
+      "en": "basement",
+      "ja": "地下室",
+      "chapter": 8
+    },
+    {
+      "en": "battery",
+      "ja": "電池",
+      "chapter": 9
+    },
+    {
+      "en": "battle",
+      "ja": "戦闘、戦い",
+      "chapter": 10
+    },
+    {
+      "en": "beach",
+      "ja": "ビーチ、浜辺",
+      "chapter": 1
+    },
+    {
+      "en": "bean",
+      "ja": "豆",
+      "chapter": 2
+    },
+    {
+      "en": "beauty",
+      "ja": "美、美人",
+      "chapter": 3
+    },
+    {
+      "en": "bedroom",
+      "ja": "寝室",
+      "chapter": 4
+    },
+    {
+      "en": "beef",
+      "ja": "牛肉",
+      "chapter": 5
+    },
+    {
+      "en": "beginner",
+      "ja": "初心者",
+      "chapter": 6
+    },
+    {
+      "en": "beginning",
+      "ja": "始まり",
+      "chapter": 7
+    },
+    {
+      "en": "behalf",
+      "ja": "利益、支持",
+      "chapter": 8
+    },
+    {
+      "en": "belief",
+      "ja": "信念、信頼",
+      "chapter": 9
+    },
+    {
+      "en": "bell",
+      "ja": "鈴、鐘",
+      "chapter": 10
+    },
+    {
+      "en": "belt",
+      "ja": "ベルト",
+      "chapter": 1
+    },
+    {
+      "en": "bench",
+      "ja": "ベンチ",
+      "chapter": 2
+    },
+    {
+      "en": "berry",
+      "ja": "ベリー類",
+      "chapter": 3
+    },
+    {
+      "en": "bicycle",
+      "ja": "自転車",
+      "chapter": 4
+    },
+    {
+      "en": "bill",
+      "ja": "請求書、法案、紙幣",
+      "chapter": 5
+    },
+    {
+      "en": "biology",
+      "ja": "生物学",
+      "chapter": 6
+    },
+    {
+      "en": "bird",
+      "ja": "鳥",
+      "chapter": 7
+    },
+    {
+      "en": "birthday",
+      "ja": "誕生日",
+      "chapter": 8
+    },
+    {
+      "en": "blanket",
+      "ja": "毛布",
+      "chapter": 9
+    },
+    {
+      "en": "blood",
+      "ja": "血液",
+      "chapter": 10
+    },
+    {
+      "en": "blouse",
+      "ja": "ブラウス",
+      "chapter": 1
+    },
+    {
+      "en": "board",
+      "ja": "板、委員会",
+      "chapter": 2
+    },
+    {
+      "en": "boat",
+      "ja": "ボート",
+      "chapter": 3
+    },
+    {
+      "en": "body",
+      "ja": "身体",
+      "chapter": 4
+    },
+    {
+      "en": "bone",
+      "ja": "骨",
+      "chapter": 5
+    },
+    {
+      "en": "bookcase",
+      "ja": "本棚",
+      "chapter": 6
+    },
+    {
+      "en": "border",
+      "ja": "国境、境界",
+      "chapter": 7
+    },
+    {
+      "en": "bottle",
+      "ja": "ボトル、瓶",
+      "chapter": 8
+    },
+    {
+      "en": "bottom",
+      "ja": "底",
+      "chapter": 9
+    },
+    {
+      "en": "bowl",
+      "ja": "鉢、ボウル",
+      "chapter": 10
+    },
+    {
+      "en": "brain",
+      "ja": "脳",
+      "chapter": 1
+    },
+    {
+      "en": "branch",
+      "ja": "枝、支店",
+      "chapter": 2
+    },
+    {
+      "en": "brand",
+      "ja": "ブランド",
+      "chapter": 3
+    },
+    {
+      "en": "brass",
+      "ja": "真鍮",
+      "chapter": 4
+    },
+    {
+      "en": "bread",
+      "ja": "パン",
+      "chapter": 5
+    },
+    {
+      "en": "breakfast",
+      "ja": "朝食",
+      "chapter": 6
+    },
+    {
+      "en": "breath",
+      "ja": "息、呼吸",
+      "chapter": 7
+    },
+    {
+      "en": "breeze",
+      "ja": "微風、そよ風",
+      "chapter": 8
+    },
+    {
+      "en": "brick",
+      "ja": "レンガ",
+      "chapter": 9
+    },
+    {
+      "en": "bridge",
+      "ja": "橋",
+      "chapter": 10
+    },
+    {
+      "en": "broadcast",
+      "ja": "放送",
+      "chapter": 1
+    },
+    {
+      "en": "brother",
+      "ja": "兄、弟",
+      "chapter": 2
+    },
+    {
+      "en": "brush",
+      "ja": "ブラシ、筆",
+      "chapter": 3
+    },
+    {
+      "en": "bubble",
+      "ja": "泡",
+      "chapter": 4
+    },
+    {
+      "en": "bucket",
+      "ja": "バケツ",
+      "chapter": 5
+    },
+    {
+      "en": "able",
+      "ja": "〜できる",
+      "chapter": 6
+    },
+    {
+      "en": "absolute",
+      "ja": "絶対的な",
+      "chapter": 7
+    },
+    {
+      "en": "academic",
+      "ja": "学術的な",
+      "chapter": 8
+    },
+    {
+      "en": "accurate",
+      "ja": "正確な",
+      "chapter": 9
+    },
+    {
+      "en": "acute",
+      "ja": "鋭い、深刻な",
+      "chapter": 10
+    },
+    {
+      "en": "additional",
+      "ja": "追加の",
+      "chapter": 1
+    },
+    {
+      "en": "adequate",
+      "ja": "適切な、十分な",
+      "chapter": 2
+    },
+    {
+      "en": "advanced",
+      "ja": "進んだ、高等な",
+      "chapter": 3
+    },
+    {
+      "en": "afraid",
+      "ja": "恐れて",
+      "chapter": 4
+    },
+    {
+      "en": "alive",
+      "ja": "生きている",
+      "chapter": 5
+    },
+    {
+      "en": "all",
+      "ja": "すべての",
+      "chapter": 6
+    },
+    {
+      "en": "alone",
+      "ja": "単読で、一人で",
+      "chapter": 7
+    },
+    {
+      "en": "alternative",
+      "ja": "代替の",
+      "chapter": 8
+    },
+    {
+      "en": "amazing",
+      "ja": "驚くべき",
+      "chapter": 9
+    },
+    {
+      "en": "angry",
+      "ja": "怒った",
+      "chapter": 10
+    },
+    {
+      "en": "another",
+      "ja": "別の",
+      "chapter": 1
+    },
+    {
+      "en": "apparent",
+      "ja": "明白な",
+      "chapter": 2
+    },
+    {
+      "en": "appropriate",
+      "ja": "適切な",
+      "chapter": 3
+    },
+    {
+      "en": "artificial",
+      "ja": "人工的な",
+      "chapter": 4
+    },
+    {
+      "en": "artistic",
+      "ja": "芸術的な",
+      "chapter": 5
+    },
+    {
+      "en": "ashamed",
+      "ja": "恥じて",
+      "chapter": 6
+    },
+    {
+      "en": "asleep",
+      "ja": "眠って",
+      "chapter": 7
+    },
+    {
+      "en": "associated",
+      "ja": "関連した",
+      "chapter": 8
+    },
+    {
+      "en": "atomic",
+      "ja": "原子の",
+      "chapter": 9
+    },
+    {
+      "en": "attractive",
+      "ja": "魅力的な",
+      "chapter": 10
+    },
+    {
+      "en": "audio",
+      "ja": "音声の",
+      "chapter": 1
+    },
+    {
+      "en": "awake",
+      "ja": "目覚めて",
+      "chapter": 2
+    },
+    {
+      "en": "awesome",
+      "ja": "すばらしい",
+      "chapter": 3
+    },
+    {
+      "en": "awful",
+      "ja": "ひどい",
+      "chapter": 4
+    },
+    {
+      "en": "bad",
+      "ja": "悪い",
+      "chapter": 5
+    },
+    {
+      "en": "balanced",
+      "ja": "バランスの取れた",
+      "chapter": 6
+    },
+    {
+      "en": "bare",
+      "ja": "裸の、ありのままの",
+      "chapter": 7
+    },
+    {
+      "en": "beneficial",
+      "ja": "有益な",
+      "chapter": 8
+    },
+    {
+      "en": "best",
+      "ja": "最高の",
+      "chapter": 9
+    },
+    {
+      "en": "better",
+      "ja": "より良い",
+      "chapter": 10
+    },
+    {
+      "en": "big",
+      "ja": "大きい",
+      "chapter": 1
+    },
+    {
+      "en": "bilingual",
+      "ja": "バイリンガルの",
+      "chapter": 2
+    },
+    {
+      "en": "biological",
+      "ja": "生物学的な",
+      "chapter": 3
+    },
+    {
+      "en": "bitter",
+      "ja": "苦い",
+      "chapter": 4
+    },
+    {
+      "en": "black",
+      "ja": "黒い",
+      "chapter": 5
+    },
+    {
+      "en": "blind",
+      "ja": "盲目の",
+      "chapter": 6
+    },
+    {
+      "en": "blue",
+      "ja": "青い",
+      "chapter": 7
+    },
+    {
+      "en": "bold",
+      "ja": "大胆な",
+      "chapter": 8
+    },
+    {
+      "en": "boring",
+      "ja": "退屈な",
+      "chapter": 9
+    },
+    {
+      "en": "bound",
+      "ja": "縛られた、〜行きの",
+      "chapter": 10
+    },
+    {
+      "en": "brave",
+      "ja": "勇敢な",
+      "chapter": 1
+    },
+    {
+      "en": "brief",
+      "ja": "簡潔な",
+      "chapter": 2
+    },
+    {
+      "en": "bright",
+      "ja": "明るい",
+      "chapter": 3
+    },
+    {
+      "en": "brilliant",
+      "ja": "輝かしい、優秀な",
+      "chapter": 4
+    },
+    {
+      "en": "broad",
+      "ja": "広い",
+      "chapter": 5
+    },
+    {
+      "en": "brown",
+      "ja": "茶色い",
+      "chapter": 6
+    },
+    {
+      "en": "busy",
+      "ja": "忙しい",
+      "chapter": 7
+    },
+    {
+      "en": "calm",
+      "ja": "穏やかな",
+      "chapter": 8
+    },
+    {
+      "en": "capable",
+      "ja": "有能な",
+      "chapter": 9
+    },
+    {
+      "en": "casual",
+      "ja": "カジュアルな",
+      "chapter": 10
+    },
+    {
+      "en": "central",
+      "ja": "中央の",
+      "chapter": 1
+    },
+    {
+      "en": "certain",
+      "ja": "確かな、ある程度の",
+      "chapter": 2
+    },
+    {
+      "en": "cheerful",
+      "ja": "陽気な",
+      "chapter": 3
+    },
+    {
+      "en": "chief",
+      "ja": "主要な",
+      "chapter": 4
+    },
+    {
+      "en": "chronic",
+      "ja": "慢性の",
+      "chapter": 5
+    },
+    {
+      "en": "civic",
+      "ja": "市民の",
+      "chapter": 6
+    },
+    {
+      "en": "civil",
+      "ja": "市民の、民間の",
+      "chapter": 7
+    },
+    {
+      "en": "classic",
+      "ja": "古典的な、一流の",
+      "chapter": 8
+    },
+    {
+      "en": "clever",
+      "ja": "賢い",
+      "chapter": 9
+    },
+    {
+      "en": "clinical",
+      "ja": "臨床の",
+      "chapter": 10
+    },
+    {
+      "en": "coarse",
+      "ja": "粗い",
+      "chapter": 1
+    },
+    {
+      "en": "cognitive",
+      "ja": "認知の",
+      "chapter": 2
+    },
+    {
+      "en": "cold",
+      "ja": "寒い、冷たい",
+      "chapter": 3
+    },
+    {
+      "en": "collaborative",
+      "ja": "協力的な",
+      "chapter": 4
+    },
+    {
+      "en": "collective",
+      "ja": "集団の",
+      "chapter": 5
+    },
+    {
+      "en": "colorful",
+      "ja": "色鮮やかな",
+      "chapter": 6
+    },
+    {
+      "en": "compact",
+      "ja": "コンパクトな",
+      "chapter": 7
+    },
+    {
+      "en": "comparable",
+      "ja": "匹敵する",
+      "chapter": 8
+    },
+    {
+      "en": "competitive",
+      "ja": "競争力のある",
+      "chapter": 9
+    },
+    {
+      "en": "complex",
+      "ja": "複雑な",
+      "chapter": 10
+    },
+    {
+      "en": "complicated",
+      "ja": "複雑な",
+      "chapter": 1
+    },
+    {
+      "en": "comprehensive",
+      "ja": "包括的な",
+      "chapter": 2
+    },
+    {
+      "en": "compulsory",
+      "ja": "義務的な",
+      "chapter": 3
+    },
+    {
+      "en": "confident",
+      "ja": "自信がある",
+      "chapter": 4
+    },
+    {
+      "en": "confidential",
+      "ja": "機密の",
+      "chapter": 5
+    },
+    {
+      "en": "conscious",
+      "ja": "意識している",
+      "chapter": 6
+    },
+    {
+      "en": "consecutive",
+      "ja": "連続した",
+      "chapter": 7
+    },
+    {
+      "en": "conservative",
+      "ja": "保守的な",
+      "chapter": 8
+    },
+    {
+      "en": "considerable",
+      "ja": "かなりの",
+      "chapter": 9
+    },
+    {
+      "en": "consistent",
+      "ja": "一貫した",
+      "chapter": 10
+    },
+    {
+      "en": "constitutional",
+      "ja": "憲法の",
+      "chapter": 1
+    },
+    {
+      "en": "contemporary",
+      "ja": "現代の",
+      "chapter": 2
+    },
+    {
+      "en": "continual",
+      "ja": "継続的な",
+      "chapter": 3
+    },
+    {
+      "en": "continuous",
+      "ja": "連続的な",
+      "chapter": 4
+    },
+    {
+      "en": "convenient",
+      "ja": "便利な",
+      "chapter": 5
+    },
+    {
+      "en": "conventional",
+      "ja": "従来の",
+      "chapter": 6
+    },
+    {
+      "en": "cool",
+      "ja": "涼しい、かっこいい",
+      "chapter": 7
+    },
+    {
+      "en": "cooperative",
+      "ja": "協力的な",
+      "chapter": 8
+    },
+    {
+      "en": "corporate",
+      "ja": "企業の",
+      "chapter": 9
+    },
+    {
+      "en": "box",
+      "ja": "箱",
+      "chapter": 10
+    },
+    {
+      "en": "bus",
+      "ja": "バス",
+      "chapter": 1
+    },
+    {
+      "en": "cab",
+      "ja": "タクシー",
+      "chapter": 2
+    },
+    {
+      "en": "cake",
+      "ja": "ケーキ",
+      "chapter": 3
+    },
+    {
+      "en": "cap",
+      "ja": "帽子",
+      "chapter": 4
+    },
+    {
+      "en": "car",
+      "ja": "車",
+      "chapter": 5
+    },
+    {
+      "en": "cat",
+      "ja": "猫",
+      "chapter": 6
+    },
+    {
+      "en": "chair",
+      "ja": "椅子",
+      "chapter": 7
+    },
+    {
+      "en": "chef",
+      "ja": "シェフ",
+      "chapter": 8
+    },
+    {
+      "en": "city",
+      "ja": "都市",
+      "chapter": 9
+    },
+    {
+      "en": "desk",
+      "ja": "机",
+      "chapter": 10
+    },
+    {
+      "en": "dog",
+      "ja": "犬",
+      "chapter": 1
+    },
+    {
+      "en": "door",
+      "ja": "ドア",
+      "chapter": 2
+    },
+    {
+      "en": "duck",
+      "ja": "アヒル",
+      "chapter": 3
+    },
+    {
+      "en": "egg",
+      "ja": "卵",
+      "chapter": 4
+    },
+    {
+      "en": "fan",
+      "ja": "扇風機、ファン",
+      "chapter": 5
+    },
+    {
+      "en": "farm",
+      "ja": "農場",
+      "chapter": 6
+    },
+    {
+      "en": "film",
+      "ja": "映画",
+      "chapter": 7
+    },
+    {
+      "en": "fish",
+      "ja": "魚",
+      "chapter": 8
+    },
+    {
+      "en": "food",
+      "ja": "食べ物",
+      "chapter": 9
+    },
+    {
+      "en": "game",
+      "ja": "ゲーム",
+      "chapter": 10
+    },
+    {
+      "en": "gate",
+      "ja": "門",
+      "chapter": 1
+    },
+    {
+      "en": "gift",
+      "ja": "贈り物",
+      "chapter": 2
+    },
+    {
+      "en": "girl",
+      "ja": "少女",
+      "chapter": 3
+    },
+    {
+      "en": "glass",
+      "ja": "ガラス、コップ",
+      "chapter": 4
+    },
+    {
+      "en": "gold",
+      "ja": "金",
+      "chapter": 5
+    },
+    {
+      "en": "gym",
+      "ja": "体育館",
+      "chapter": 6
+    },
+    {
+      "en": "hat",
+      "ja": "帽子",
+      "chapter": 7
+    },
+    {
+      "en": "home",
+      "ja": "家、ホーム",
+      "chapter": 8
+    },
+    {
+      "en": "hope",
+      "ja": "希望",
+      "chapter": 9
+    },
+    {
+      "en": "ice",
+      "ja": "氷",
+      "chapter": 10
+    }
+  ],
+  "pre2plus": [
+    {
+      "en": "achieve",
+      "ja": "〜を達成する",
+      "chapter": 1
+    },
+    {
+      "en": "admit",
+      "ja": "〜を認める",
+      "chapter": 2
+    },
+    {
+      "en": "affect",
+      "ja": "〜に影響を与える",
+      "chapter": 3
+    },
+    {
+      "en": "announce",
+      "ja": "〜を発表する",
+      "chapter": 1
+    },
+    {
+      "en": "apologize",
+      "ja": "謝罪する",
+      "chapter": 2
+    },
+    {
+      "en": "appreciate",
+      "ja": "〜に感謝する",
+      "chapter": 3
+    },
+    {
+      "en": "approach",
+      "ja": "〜に近づく",
+      "chapter": 1
+    },
+    {
+      "en": "approve",
+      "ja": "〜を承認する",
+      "chapter": 2
+    },
+    {
+      "en": "assume",
+      "ja": "〜と仮定する",
+      "chapter": 3
+    },
+    {
+      "en": "attract",
+      "ja": "〜を引きつける",
+      "chapter": 1
+    },
+    {
+      "en": "behave",
+      "ja": "振る舞う",
+      "chapter": 2
+    },
+    {
+      "en": "cause",
+      "ja": "〜を引き起こす",
+      "chapter": 3
+    },
+    {
+      "en": "celebrate",
+      "ja": "〜を祝う",
+      "chapter": 1
+    },
+    {
+      "en": "claim",
+      "ja": "〜を主張する",
+      "chapter": 2
+    },
+    {
+      "en": "combine",
+      "ja": "〜を結合させる",
+      "chapter": 3
+    },
+    {
+      "en": "concern",
+      "ja": "〜に関係する、〜を心配させる",
+      "chapter": 1
+    },
+    {
+      "en": "confirm",
+      "ja": "〜を確認する",
+      "chapter": 2
+    },
+    {
+      "en": "consider",
+      "ja": "〜を考慮する",
+      "chapter": 3
+    },
+    {
+      "en": "contain",
+      "ja": "〜を含む",
+      "chapter": 1
+    },
+    {
+      "en": "continue",
+      "ja": "〜を続ける",
+      "chapter": 2
+    },
+    {
+      "en": "control",
+      "ja": "〜を管理する、支配する",
+      "chapter": 3
+    },
+    {
+      "en": "convince",
+      "ja": "〜を確信させる",
+      "chapter": 1
+    },
+    {
+      "en": "deal",
+      "ja": "対処する、扱う",
+      "chapter": 2
+    },
+    {
+      "en": "decrease",
+      "ja": "減少する",
+      "chapter": 3
+    },
+    {
+      "en": "defend",
+      "ja": "〜を守る、防衛する",
+      "chapter": 1
+    },
+    {
+      "en": "demand",
+      "ja": "〜を要求する",
+      "chapter": 2
+    },
+    {
+      "en": "destroy",
+      "ja": "〜を破壊する",
+      "chapter": 3
+    },
+    {
+      "en": "determine",
+      "ja": "〜を決定する",
+      "chapter": 1
+    },
+    {
+      "en": "divide",
+      "ja": "〜を分割する",
+      "chapter": 2
+    },
+    {
+      "en": "employ",
+      "ja": "〜を雇う",
+      "chapter": 3
+    },
+    {
+      "en": "encourage",
+      "ja": "〜を勇気づける",
+      "chapter": 1
+    },
+    {
+      "en": "establish",
+      "ja": "〜を設立する",
+      "chapter": 2
+    },
+    {
+      "en": "examine",
+      "ja": "〜を検査する",
+      "chapter": 3
+    },
+    {
+      "en": "express",
+      "ja": "〜を表現する",
+      "chapter": 1
+    },
+    {
+      "en": "face",
+      "ja": "〜に直面する",
+      "chapter": 2
+    },
+    {
+      "en": "fail",
+      "ja": "失敗する、〜し損ねる",
+      "chapter": 3
+    },
+    {
+      "en": "focus",
+      "ja": "集中する",
+      "chapter": 1
+    },
+    {
+      "en": "gain",
+      "ja": "〜を得る",
+      "chapter": 2
+    },
+    {
+      "en": "handle",
+      "ja": "〜を扱う、処理する",
+      "chapter": 3
+    },
+    {
+      "en": "host",
+      "ja": "〜を主催する",
+      "chapter": 1
+    },
+    {
+      "en": "identify",
+      "ja": "〜を特定する",
+      "chapter": 2
+    },
+    {
+      "en": "improve",
+      "ja": "〜を向上させる",
+      "chapter": 3
+    },
+    {
+      "en": "increase",
+      "ja": "〜を増やす",
+      "chapter": 1
+    },
+    {
+      "en": "influence",
+      "ja": "〜に影響を与える",
+      "chapter": 2
+    },
+    {
+      "en": "introduce",
+      "ja": "〜を紹介する、導入する",
+      "chapter": 3
+    },
+    {
+      "en": "maintain",
+      "ja": "〜を維持する",
+      "chapter": 1
+    },
+    {
+      "en": "manage",
+      "ja": "〜を何とかやり遂げる、管理する",
+      "chapter": 2
+    },
+    {
+      "en": "mention",
+      "ja": "〜と言及する",
+      "chapter": 3
+    },
+    {
+      "en": "negotiate",
+      "ja": "交渉する",
+      "chapter": 1
+    },
+    {
+      "en": "obtain",
+      "ja": "〜を手に入れる",
+      "chapter": 2
+    },
+    {
+      "en": "ability",
+      "ja": "能力",
+      "chapter": 3
+    },
+    {
+      "en": "advantage",
+      "ja": "利点、強み",
+      "chapter": 1
+    },
+    {
+      "en": "agriculture",
+      "ja": "農業",
+      "chapter": 2
+    },
+    {
+      "en": "application",
+      "ja": "申請、応用",
+      "chapter": 3
+    },
+    {
+      "en": "architecture",
+      "ja": "建築",
+      "chapter": 1
+    },
+    {
+      "en": "association",
+      "ja": "協会、連合",
+      "chapter": 2
+    },
+    {
+      "en": "audience",
+      "ja": "聴衆、観客",
+      "chapter": 3
+    },
+    {
+      "en": "behavior",
+      "ja": "行動、態度",
+      "chapter": 1
+    },
+    {
+      "en": "campaign",
+      "ja": "キャンペーン、運動",
+      "chapter": 2
+    },
+    {
+      "en": "carbon",
+      "ja": "炭素",
+      "chapter": 3
+    },
+    {
+      "en": "citizen",
+      "ja": "市民",
+      "chapter": 1
+    },
+    {
+      "en": "condition",
+      "ja": "状況、条件",
+      "chapter": 2
+    },
+    {
+      "en": "consequence",
+      "ja": "結果",
+      "chapter": 3
+    },
+    {
+      "en": "consumer",
+      "ja": "消費者",
+      "chapter": 1
+    },
+    {
+      "en": "cooperation",
+      "ja": "協力",
+      "chapter": 2
+    },
+    {
+      "en": "database",
+      "ja": "データベース",
+      "chapter": 3
+    },
+    {
+      "en": "degree",
+      "ja": "学位、度",
+      "chapter": 1
+    },
+    {
+      "en": "destination",
+      "ja": "目的地",
+      "chapter": 2
+    },
+    {
+      "en": "development",
+      "ja": "発展、開発",
+      "chapter": 3
+    },
+    {
+      "en": "diet",
+      "ja": "食事、ダイエット",
+      "chapter": 1
+    },
+    {
+      "en": "disaster",
+      "ja": "災害、惨事",
+      "chapter": 2
+    },
+    {
+      "en": "economy",
+      "ja": "経済",
+      "chapter": 3
+    },
+    {
+      "en": "electricity",
+      "ja": "電気",
+      "chapter": 1
+    },
+    {
+      "en": "employee",
+      "ja": "従業員",
+      "chapter": 2
+    },
+    {
+      "en": "generation",
+      "ja": "世代",
+      "chapter": 3
+    },
+    {
+      "en": "globalization",
+      "ja": "グローバル化",
+      "chapter": 1
+    },
+    {
+      "en": "greenhouse",
+      "ja": "温室",
+      "chapter": 2
+    },
+    {
+      "en": "harvest",
+      "ja": "収穫",
+      "chapter": 3
+    },
+    {
+      "en": "history",
+      "ja": "歴史",
+      "chapter": 1
+    },
+    {
+      "en": "industry",
+      "ja": "産業、工業",
+      "chapter": 2
+    },
+    {
+      "en": "influence",
+      "ja": "影響力",
+      "chapter": 3
+    },
+    {
+      "en": "ingredient",
+      "ja": "材料、成分",
+      "chapter": 1
+    },
+    {
+      "en": "institution",
+      "ja": "機関、施設",
+      "chapter": 2
+    },
+    {
+      "en": "invention",
+      "ja": "発明",
+      "chapter": 3
+    },
+    {
+      "en": "material",
+      "ja": "材料、素材",
+      "chapter": 1
+    },
+    {
+      "en": "medicine",
+      "ja": "薬、医学",
+      "chapter": 2
+    },
+    {
+      "en": "neighborhood",
+      "ja": "近隣、地域",
+      "chapter": 3
+    },
+    {
+      "en": "passenger",
+      "ja": "乗客",
+      "chapter": 1
+    },
+    {
+      "en": "philosophy",
+      "ja": "哲学",
+      "chapter": 2
+    },
+    {
+      "en": "pollution",
+      "ja": "汚染",
+      "chapter": 3
+    },
+    {
+      "en": "quality",
+      "ja": "質、品質",
+      "chapter": 1
+    },
+    {
+      "en": "rank",
+      "ja": "階級、ランク",
+      "chapter": 2
+    },
+    {
+      "en": "relationship",
+      "ja": "関係",
+      "chapter": 3
+    },
+    {
+      "en": "resource",
+      "ja": "資源",
+      "chapter": 1
+    },
+    {
+      "en": "satellite",
+      "ja": "人工衛星",
+      "chapter": 2
+    },
+    {
+      "en": "society",
+      "ja": "社会",
+      "chapter": 3
+    },
+    {
+      "en": "source",
+      "ja": "源、情報源",
+      "chapter": 1
+    },
+    {
+      "en": "technology",
+      "ja": "科学技術",
+      "chapter": 2
+    },
+    {
+      "en": "temperature",
+      "ja": "温度、気温",
+      "chapter": 3
+    },
+    {
+      "en": "volunteer",
+      "ja": "ボランティア",
+      "chapter": 1
+    },
+    {
+      "en": "able",
+      "ja": "〜できる",
+      "chapter": 2
+    },
+    {
+      "en": "absolute",
+      "ja": "絶対的な",
+      "chapter": 3
+    },
+    {
+      "en": "accurate",
+      "ja": "正確な",
+      "chapter": 1
+    },
+    {
+      "en": "additional",
+      "ja": "追加の",
+      "chapter": 2
+    },
+    {
+      "en": "alternative",
+      "ja": "代替の",
+      "chapter": 3
+    },
+    {
+      "en": "attractive",
+      "ja": "魅力的な",
+      "chapter": 1
+    },
+    {
+      "en": "biological",
+      "ja": "生物学的な",
+      "chapter": 2
+    },
+    {
+      "en": "broad",
+      "ja": "幅の広い",
+      "chapter": 3
+    },
+    {
+      "en": "business",
+      "ja": "ビジネスの",
+      "chapter": 1
+    },
+    {
+      "en": "commercial",
+      "ja": "商業の",
+      "chapter": 2
+    },
+    {
+      "en": "complex",
+      "ja": "複雑な",
+      "chapter": 3
+    },
+    {
+      "en": "constant",
+      "ja": "絶え間ない",
+      "chapter": 1
+    },
+    {
+      "en": "convenient",
+      "ja": "便利な",
+      "chapter": 2
+    },
+    {
+      "en": "creative",
+      "ja": "創造的な",
+      "chapter": 3
+    },
+    {
+      "en": "critical",
+      "ja": "危機的な、重大な",
+      "chapter": 1
+    },
+    {
+      "en": "cultural",
+      "ja": "文化的な",
+      "chapter": 2
+    },
+    {
+      "en": "democratic",
+      "ja": "民主的な",
+      "chapter": 3
+    },
+    {
+      "en": "effective",
+      "ja": "効果的な",
+      "chapter": 1
+    },
+    {
+      "en": "efficient",
+      "ja": "効率的な",
+      "chapter": 2
+    },
+    {
+      "en": "environmental",
+      "ja": "環境の",
+      "chapter": 3
+    },
+    {
+      "en": "exact",
+      "ja": "正確な",
+      "chapter": 1
+    },
+    {
+      "en": "extreme",
+      "ja": "極端な",
+      "chapter": 2
+    },
+    {
+      "en": "financial",
+      "ja": "財政の",
+      "chapter": 3
+    },
+    {
+      "en": "frequent",
+      "ja": "頻繁な",
+      "chapter": 1
+    },
+    {
+      "en": "fully",
+      "ja": "十分に、完全に",
+      "chapter": 2
+    },
+    {
+      "en": "general",
+      "ja": "一般的な",
+      "chapter": 3
+    },
+    {
+      "en": "historical",
+      "ja": "歴史の",
+      "chapter": 1
+    },
+    {
+      "en": "highly",
+      "ja": "高度に、非常に",
+      "chapter": 2
+    },
+    {
+      "en": "illegal",
+      "ja": "違法な",
+      "chapter": 3
+    },
+    {
+      "en": "immediately",
+      "ja": "すぐに、直ちに",
+      "chapter": 1
+    },
+    {
+      "en": "individual",
+      "ja": "個人の、個々の",
+      "chapter": 2
+    },
+    {
+      "en": "industrial",
+      "ja": "産業の",
+      "chapter": 3
+    },
+    {
+      "en": "instant",
+      "ja": "即座の",
+      "chapter": 1
+    },
+    {
+      "en": "intellectual",
+      "ja": "知的な",
+      "chapter": 2
+    },
+    {
+      "en": "internal",
+      "ja": "内部の",
+      "chapter": 3
+    },
+    {
+      "en": "international",
+      "ja": "国際的な",
+      "chapter": 1
+    },
+    {
+      "en": "legal",
+      "ja": "法律の、合法の",
+      "chapter": 2
+    },
+    {
+      "en": "likely",
+      "ja": "〜しそうな",
+      "chapter": 3
+    },
+    {
+      "en": "negative",
+      "ja": "否定的な、負の",
+      "chapter": 1
+    },
+    {
+      "en": "original",
+      "ja": "独自の、最初の",
+      "chapter": 2
+    },
+    {
+      "en": "physical",
+      "ja": "物理的な、身体の",
+      "chapter": 3
+    },
+    {
+      "en": "positive",
+      "ja": "積極的な、正の",
+      "chapter": 1
+    },
+    {
+      "en": "practical",
+      "ja": "実用的な",
+      "chapter": 2
+    },
+    {
+      "en": "primary",
+      "ja": "主要な、第一の",
+      "chapter": 3
+    },
+    {
+      "en": "professional",
+      "ja": "専門的な、プロの",
+      "chapter": 1
+    },
+    {
+      "en": "responsible",
+      "ja": "責任がある",
+      "chapter": 2
+    },
+    {
+      "en": "standard",
+      "ja": "標準的な",
+      "chapter": 3
+    },
+    {
+      "en": "suitable",
+      "ja": "適した",
+      "chapter": 1
+    },
+    {
+      "en": "temporary",
+      "ja": "一時的な",
+      "chapter": 2
+    },
+    {
+      "en": "tiny",
+      "ja": "ごく小さい",
+      "chapter": 3
+    }
+  ],
+  "grade2": [
+    {
+      "en": "absorb",
+      "ja": "〜を吸収する",
+      "chapter": 1
+    },
+    {
+      "en": "accumulate",
+      "ja": "〜を蓄積する",
+      "chapter": 2
+    },
+    {
+      "en": "adapt",
+      "ja": "〜を適応させる",
+      "chapter": 3
+    },
+    {
+      "en": "adopt",
+      "ja": "〜を採用する、養子にする",
+      "chapter": 1
+    },
+    {
+      "en": "advertise",
+      "ja": "〜を宣伝する",
+      "chapter": 2
+    },
+    {
+      "en": "alter",
+      "ja": "〜を変える",
+      "chapter": 3
+    },
+    {
+      "en": "analyze",
+      "ja": "〜を分析する",
+      "chapter": 1
+    },
+    {
+      "en": "appeal",
+      "ja": "訴える、引きつける",
+      "chapter": 2
+    },
+    {
+      "en": "associate",
+      "ja": "〜を関連づける",
+      "chapter": 3
+    },
+    {
+      "en": "assume",
+      "ja": "〜と仮定する",
+      "chapter": 1
+    },
+    {
+      "en": "boast",
+      "ja": "〜を誇る",
+      "chapter": 2
+    },
+    {
+      "en": "calculate",
+      "ja": "〜を計算する",
+      "chapter": 3
+    },
+    {
+      "en": "commit",
+      "ja": "〜を委ねる、犯す",
+      "chapter": 1
+    },
+    {
+      "en": "compete",
+      "ja": "競争する",
+      "chapter": 2
+    },
+    {
+      "en": "concentrate",
+      "ja": "集中する",
+      "chapter": 3
+    },
+    {
+      "en": "conduct",
+      "ja": "〜を行う",
+      "chapter": 1
+    },
+    {
+      "en": "congratulate",
+      "ja": "〜を祝う",
+      "chapter": 2
+    },
+    {
+      "en": "contribute",
+      "ja": "貢献する、寄付する",
+      "chapter": 3
+    },
+    {
+      "en": "convey",
+      "ja": "〜を伝える、運ぶ",
+      "chapter": 1
+    },
+    {
+      "en": "cooperate",
+      "ja": "協力する",
+      "chapter": 2
+    },
+    {
+      "en": "decline",
+      "ja": "衰退する、〜を断る",
+      "chapter": 3
+    },
+    {
+      "en": "define",
+      "ja": "〜を定義する",
+      "chapter": 1
+    },
+    {
+      "en": "demonstrate",
+      "ja": "〜を実演する、証明する",
+      "chapter": 2
+    },
+    {
+      "en": "depart",
+      "ja": "出発する",
+      "chapter": 3
+    },
+    {
+      "en": "deserve",
+      "ja": "〜に値する",
+      "chapter": 1
+    },
+    {
+      "en": "detect",
+      "ja": "〜を検出する、見つける",
+      "chapter": 2
+    },
+    {
+      "en": "emphasize",
+      "ja": "〜を強調する",
+      "chapter": 3
+    },
+    {
+      "en": "encounter",
+      "ja": "〜に遭遇する",
+      "chapter": 1
+    },
+    {
+      "en": "encourage",
+      "ja": "〜を促進する、勇気づける",
+      "chapter": 2
+    },
+    {
+      "en": "engage",
+      "ja": "〜を従事させる",
+      "chapter": 3
+    },
+    {
+      "en": "enhance",
+      "ja": "〜を高める、強化する",
+      "chapter": 1
+    },
+    {
+      "en": "ensure",
+      "ja": "〜を確実にする",
+      "chapter": 2
+    },
+    {
+      "en": "estimate",
+      "ja": "〜を見積もる",
+      "chapter": 3
+    },
+    {
+      "en": "evaluate",
+      "ja": "〜を評価する",
+      "chapter": 1
+    },
+    {
+      "en": "expand",
+      "ja": "〜を拡大する",
+      "chapter": 2
+    },
+    {
+      "en": "expose",
+      "ja": "〜をさらす",
+      "chapter": 3
+    },
+    {
+      "en": "guarantee",
+      "ja": "〜を保証する",
+      "chapter": 1
+    },
+    {
+      "en": "imply",
+      "ja": "〜を暗示する",
+      "chapter": 2
+    },
+    {
+      "en": "import",
+      "ja": "〜を輸入する",
+      "chapter": 3
+    },
+    {
+      "en": "indicate",
+      "ja": "〜を示す",
+      "chapter": 1
+    },
+    {
+      "en": "inherit",
+      "ja": "〜を引き継ぐ",
+      "chapter": 2
+    },
+    {
+      "en": "invest",
+      "ja": "〜を投資する",
+      "chapter": 3
+    },
+    {
+      "en": "investigate",
+      "ja": "〜を調査する",
+      "chapter": 1
+    },
+    {
+      "en": "justify",
+      "ja": "〜を正当化する",
+      "chapter": 2
+    },
+    {
+      "en": "manufacture",
+      "ja": "〜を製造する",
+      "chapter": 3
+    },
+    {
+      "en": "modify",
+      "ja": "〜を修正する",
+      "chapter": 1
+    },
+    {
+      "en": "observe",
+      "ja": "〜を観察する",
+      "chapter": 2
+    },
+    {
+      "en": "obtain",
+      "ja": "〜を手に入れる",
+      "chapter": 3
+    },
+    {
+      "en": "occupy",
+      "ja": "〜を占める",
+      "chapter": 1
+    },
+    {
+      "en": "administration",
+      "ja": "管理、政府",
+      "chapter": 2
+    },
+    {
+      "en": "alternative",
+      "ja": "選択肢、代案",
+      "chapter": 3
+    },
+    {
+      "en": "analysis",
+      "ja": "分析",
+      "chapter": 1
+    },
+    {
+      "en": "biodiversity",
+      "ja": "生物多様性",
+      "chapter": 2
+    },
+    {
+      "en": "biography",
+      "ja": "伝記",
+      "chapter": 3
+    },
+    {
+      "en": "character",
+      "ja": "特徴、登場人物",
+      "chapter": 1
+    },
+    {
+      "en": "communication",
+      "ja": "通信、コミュニケーション",
+      "chapter": 2
+    },
+    {
+      "en": "comparison",
+      "ja": "比較",
+      "chapter": 3
+    },
+    {
+      "en": "competition",
+      "ja": "競争",
+      "chapter": 1
+    },
+    {
+      "en": "consequence",
+      "ja": "結果、影響",
+      "chapter": 2
+    },
+    {
+      "en": "constitution",
+      "ja": "憲法",
+      "chapter": 3
+    },
+    {
+      "en": "contract",
+      "ja": "契約",
+      "chapter": 1
+    },
+    {
+      "en": "corporation",
+      "ja": "株式会社、大企業",
+      "chapter": 2
+    },
+    {
+      "en": "definition",
+      "ja": "定義",
+      "chapter": 3
+    },
+    {
+      "en": "demand",
+      "ja": "需要、要求",
+      "chapter": 1
+    },
+    {
+      "en": "democracy",
+      "ja": "民主主義",
+      "chapter": 2
+    },
+    {
+      "en": "department",
+      "ja": "部門、部署",
+      "chapter": 3
+    },
+    {
+      "en": "destination",
+      "ja": "目的地",
+      "chapter": 1
+    },
+    {
+      "en": "distribution",
+      "ja": "分配、流通",
+      "chapter": 2
+    },
+    {
+      "en": "diversity",
+      "ja": "多様性",
+      "chapter": 3
+    },
+    {
+      "en": "document",
+      "ja": "文書",
+      "chapter": 1
+    },
+    {
+      "en": "emission",
+      "ja": "放出、排出",
+      "chapter": 2
+    },
+    {
+      "en": "economy",
+      "ja": "経済",
+      "chapter": 3
+    },
+    {
+      "en": "emphasis",
+      "ja": "強調",
+      "chapter": 1
+    },
+    {
+      "en": "environment",
+      "ja": "環境",
+      "chapter": 2
+    },
+    {
+      "en": "equipment",
+      "ja": "装置、設備",
+      "chapter": 3
+    },
+    {
+      "en": "establishment",
+      "ja": "設立、施設",
+      "chapter": 1
+    },
+    {
+      "en": "executive",
+      "ja": "役員、重役",
+      "chapter": 2
+    },
+    {
+      "en": "experiment",
+      "ja": "実験",
+      "chapter": 3
+    },
+    {
+      "en": "finance",
+      "ja": "財政、資金調達",
+      "chapter": 1
+    },
+    {
+      "en": "globalization",
+      "ja": "グローバル化",
+      "chapter": 2
+    },
+    {
+      "en": "guarantee",
+      "ja": "保証",
+      "chapter": 3
+    },
+    {
+      "en": "hypothesis",
+      "ja": "仮説",
+      "chapter": 1
+    },
+    {
+      "en": "ingredient",
+      "ja": "材料、成分",
+      "chapter": 2
+    },
+    {
+      "en": "innovation",
+      "ja": "革新、技術革新",
+      "chapter": 3
+    },
+    {
+      "en": "institution",
+      "ja": "機関、団体",
+      "chapter": 1
+    },
+    {
+      "en": "investment",
+      "ja": "投資",
+      "chapter": 2
+    },
+    {
+      "en": "legislation",
+      "ja": "立法、法律",
+      "chapter": 3
+    },
+    {
+      "en": "manufacture",
+      "ja": "製造",
+      "chapter": 1
+    },
+    {
+      "en": "negotiation",
+      "ja": "交渉",
+      "chapter": 2
+    },
+    {
+      "en": "observation",
+      "ja": "観察",
+      "chapter": 3
+    },
+    {
+      "en": "organization",
+      "ja": "組織、団体",
+      "chapter": 1
+    },
+    {
+      "en": "philosophy",
+      "ja": "哲学",
+      "chapter": 2
+    },
+    {
+      "en": "psychology",
+      "ja": "心理学",
+      "chapter": 3
+    },
+    {
+      "en": "regulation",
+      "ja": "規制、規則",
+      "chapter": 1
+    },
+    {
+      "en": "requirement",
+      "ja": "必要条件、要件",
+      "chapter": 2
+    },
+    {
+      "en": "resource",
+      "ja": "資源",
+      "chapter": 3
+    },
+    {
+      "en": "satellite",
+      "ja": "人工衛星",
+      "chapter": 1
+    },
+    {
+      "en": "threat",
+      "ja": "脅威",
+      "chapter": 2
+    },
+    {
+      "en": "transition",
+      "ja": "移行、移り変わり",
+      "chapter": 3
+    },
+    {
+      "en": "absolute",
+      "ja": "絶対的な",
+      "chapter": 1
+    },
+    {
+      "en": "academic",
+      "ja": "学術的な、大学の",
+      "chapter": 2
+    },
+    {
+      "en": "accurate",
+      "ja": "正確な",
+      "chapter": 3
+    },
+    {
+      "en": "alternative",
+      "ja": "代替の",
+      "chapter": 1
+    },
+    {
+      "en": "appropriate",
+      "ja": "適切な",
+      "chapter": 2
+    },
+    {
+      "en": "artificial",
+      "ja": "人工的な",
+      "chapter": 3
+    },
+    {
+      "en": "biochemical",
+      "ja": "生化学的な",
+      "chapter": 1
+    },
+    {
+      "en": "biological",
+      "ja": "生物学的な",
+      "chapter": 2
+    },
+    {
+      "en": "characteristic",
+      "ja": "特徴的な",
+      "chapter": 3
+    },
+    {
+      "en": "cognitive",
+      "ja": "認知的な",
+      "chapter": 1
+    },
+    {
+      "en": "competitive",
+      "ja": "競争力のある",
+      "chapter": 2
+    },
+    {
+      "en": "complex",
+      "ja": "複雑な",
+      "chapter": 3
+    },
+    {
+      "en": "comprehensive",
+      "ja": "包括的な",
+      "chapter": 1
+    },
+    {
+      "en": "considerable",
+      "ja": "かなりの、相当な",
+      "chapter": 2
+    },
+    {
+      "en": "constant",
+      "ja": "絶え間ない",
+      "chapter": 3
+    },
+    {
+      "en": "critical",
+      "ja": "批判的な、重大な",
+      "chapter": 1
+    },
+    {
+      "en": "cultural",
+      "ja": "文化的な",
+      "chapter": 2
+    },
+    {
+      "en": "definite",
+      "ja": "明確な",
+      "chapter": 3
+    },
+    {
+      "en": "dynamic",
+      "ja": "動的な、精力的な",
+      "chapter": 1
+    },
+    {
+      "en": "efficient",
+      "ja": "効率的な",
+      "chapter": 2
+    },
+    {
+      "en": "elaborate",
+      "ja": "精巧な、入念な",
+      "chapter": 3
+    },
+    {
+      "en": "elegant",
+      "ja": "上品な、優雅な",
+      "chapter": 1
+    },
+    {
+      "en": "environmental",
+      "ja": "環境の",
+      "chapter": 2
+    },
+    {
+      "en": "equivalent",
+      "ja": "同等の",
+      "chapter": 3
+    },
+    {
+      "en": "essential",
+      "ja": "本質的な",
+      "chapter": 1
+    },
+    {
+      "en": "exceptional",
+      "ja": "例外的な、優秀な",
+      "chapter": 2
+    },
+    {
+      "en": "extensive",
+      "ja": "広範囲な",
+      "chapter": 3
+    },
+    {
+      "en": "extreme",
+      "ja": "極端な",
+      "chapter": 1
+    },
+    {
+      "en": "financial",
+      "ja": "財務の、金融の",
+      "chapter": 2
+    },
+    {
+      "en": "fundamental",
+      "ja": "根本的な、基本の",
+      "chapter": 3
+    },
+    {
+      "en": "global",
+      "ja": "地球規模の",
+      "chapter": 1
+    },
+    {
+      "en": "hostile",
+      "ja": "敵対的な",
+      "chapter": 2
+    },
+    {
+      "en": "infinite",
+      "ja": "無限の",
+      "chapter": 3
+    },
+    {
+      "en": "influential",
+      "ja": "影響力のある",
+      "chapter": 1
+    },
+    {
+      "en": "initial",
+      "ja": "初期の",
+      "chapter": 2
+    },
+    {
+      "en": "innovative",
+      "ja": "革新的な",
+      "chapter": 3
+    },
+    {
+      "en": "mutual",
+      "ja": "相互の",
+      "chapter": 1
+    },
+    {
+      "en": "permanent",
+      "ja": "永続的な",
+      "chapter": 2
+    },
+    {
+      "en": "political",
+      "ja": "政治的な",
+      "chapter": 3
+    },
+    {
+      "en": "precise",
+      "ja": "正確な、精密な",
+      "chapter": 1
+    },
+    {
+      "en": "regional",
+      "ja": "地域の",
+      "chapter": 2
+    },
+    {
+      "en": "significant",
+      "ja": "重要な、意義深い",
+      "chapter": 3
+    },
+    {
+      "en": "sophisticated",
+      "ja": "洗練された、精巧な",
+      "chapter": 1
+    },
+    {
+      "en": "spiritual",
+      "ja": "精神的な",
+      "chapter": 2
+    },
+    {
+      "en": "stable",
+      "ja": "安定した",
+      "chapter": 3
+    },
+    {
+      "en": "sufficient",
+      "ja": "十分な",
+      "chapter": 1
+    },
+    {
+      "en": "superior",
+      "ja": "優れた",
+      "chapter": 2
+    },
+    {
+      "en": "sustainable",
+      "ja": "持続可能な",
+      "chapter": 3
+    },
+    {
+      "en": "technological",
+      "ja": "科学技術の",
+      "chapter": 1
+    },
+    {
+      "en": "temporary",
+      "ja": "一時的な",
+      "chapter": 2
+    }
+  ]
+}

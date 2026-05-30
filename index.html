@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Prevents search engine indexing and AI crawling -->
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <meta name="googlebot" content="noindex, nofollow, noarchive" />
+    <meta name="googlebot-news" content="noindex, nofollow" />
+    <meta name="bingbot" content="noindex, nofollow" />
+    <title>Harupin Typing Master 🎯</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- React & ReactDOM CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- Babel Standalone CDN for in-browser JSX compilation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        /* Custom font and scrollbar matching keio_quiz style guidelines */
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
+        
+        body {
+            font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+            background: linear-gradient(135deg, #fce473 0%, #fbd53d 100%);
+        }
+
+        /* Glassmorphism card premium styling */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+        }
+
+        /* Smooth interactive transforms */
+        .btn-hover-transform {
+            transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .btn-hover-transform:hover {
+            transform: translateY(-2px);
+        }
+        .btn-hover-transform:active {
+            transform: translateY(1px);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+
+        // React App Component (pasted directly from harupin_eiken_typingApp.jsx logic)
+        function App() {
+          // アプリの状態
+          const [screen, setScreen] = useState('home'); // 'home', 'game', 'result'
+          const [selectedGrade, setSelectedGrade] = useState('');
+          const [selectedChapter, setSelectedChapter] = useState(1);
+          
+          // 単語データベースの状態（words.jsonから動的ロード）
+          const [wordDatabase, setWordDatabase] = useState(null);
+          const [loadingError, setLoadingError] = useState(null);
+          
+          // ゲーム用状態
+          const [questions, setQuestions] = useState([]);
+          const [currentIndex, setCurrentIndex] = useState(0);
+          const [currentInput, setCurrentInput] = useState('');
+          const [timeLeft, setTimeLeft] = useState(60);
+          const [scorePercentage, setScorePercentage] = useState(100);
+          
+          // ミス管理用
+          const [currentWordMistakes, setCurrentWordMistakes] = useState(0); // 1問あたりのミス回数
+          const [showHint, setShowHint] = useState(false); // 次の文字を強調表示するか
+          const [mistypedWords, setMistypedWords] = useState([]); // 復習用リスト
+          
+          // 画面の揺れエフェクト用
+          const [isError, setIsError] = useState(false);
+
+          // 履歴管理用
+          const [playHistory, setPlayHistory] = useState([]);
+          const scoreRef = useRef(100); // タイマー終了時に最新スコアを取得するための参照
+
+          // ------------------------------------------
+          // 初期化：単語データを外部JSONから非同期ロード
+          // ------------------------------------------
+          useEffect(() => {
+            fetch('words.json')
+              .then((res) => {
+                if (!res.ok) throw new Error('単語データの読み込みに失敗しました');
+                return res.json();
+              })
+              .then((data) => {
+                setWordDatabase(data);
+              })
+              .catch((err) => {
+                console.error(err);
+                setLoadingError('単語データベース（words.json）の読み込みに失敗しました。ファイルが存在するか、正しいJSON形式か確認してください。');
+              });
+          }, []);
+
+
+
+          // ------------------------------------------
+          // 初期化：ローカルストレージから履歴を読み込む
+          // ------------------------------------------
+          useEffect(() => {
+            const savedHistory = localStorage.getItem('harupin_typing_history');
+            if (savedHistory) {
+              try {
+                setPlayHistory(JSON.parse(savedHistory));
+              } catch (e) {
+                console.error("履歴の読み込みに失敗しました", e);
+              }
+            }
+          }, []);
+
+          // ------------------------------------------
+          // 履歴の保存処理
+          // ------------------------------------------
+          const saveHistory = (finalScore) => {
+            const now = new Date();
+            const dateStr = `${now.getMonth() + 1}/${now.getDate()} ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+            
+            const newRecord = {
+              id: Date.now(),
+              date: dateStr,
+              grade: selectedGrade,
+              chapter: selectedChapter,
+              score: finalScore
+            };
+            
+            // 最新10件まで保存
+            const updatedHistory = [newRecord, ...playHistory].slice(0, 10);
+            setPlayHistory(updatedHistory);
+            localStorage.setItem('harupin_typing_history', JSON.stringify(updatedHistory));
+          };
+
+          // ------------------------------------------
+          // 級選択＆チャプター画面遷移
+          // ------------------------------------------
+          const selectGradeAndGoToChapters = (gradeKey) => {
+            setSelectedGrade(gradeKey);
+            setScreen('chapter_select');
+          };
+
+          // ------------------------------------------
+          // ゲーム開始処理
+          // ------------------------------------------
+          const startGame = (gradeKey, chapterNum) => {
+            const ch = chapterNum || selectedChapter;
+            setSelectedGrade(gradeKey);
+            setSelectedChapter(ch);
+            
+            const sourceArray = (wordDatabase[gradeKey] || []).filter(w => w.chapter === ch);
+            
+            // ランダムに10問抽出
+            const shuffled = [...sourceArray].sort(() => 0.5 - Math.random());
+            const selectedQuestions = shuffled.slice(0, 10);
+            
+            setQuestions(selectedQuestions);
+            setCurrentIndex(0);
+            setCurrentInput('');
+            setTimeLeft(60);
+            setScorePercentage(100);
+            scoreRef.current = 100;
+            setCurrentWordMistakes(0);
+            setShowHint(false);
+            setMistypedWords([]);
+            setScreen('game');
+          };
+
+          // scorePercentageが更新されたらrefも更新する（タイマー終了時に参照するため）
+          useEffect(() => {
+            scoreRef.current = scorePercentage;
+          }, [scorePercentage]);
+
+          // ------------------------------------------
+          // タイマー処理
+          // ------------------------------------------
+          useEffect(() => {
+            let timer;
+            if (screen === 'game' && timeLeft > 0) {
+              timer = setInterval(() => {
+                setTimeLeft((prev) => prev - 1);
+              }, 1000);
+            } else if (screen === 'game' && timeLeft === 0) {
+              // タイムアップで終了処理
+              saveHistory(scoreRef.current);
+              setScreen('result');
+            }
+            return () => clearInterval(timer);
+          }, [screen, timeLeft]);
+
+          // ------------------------------------------
+          // キーボード入力処理
+          // ------------------------------------------
+          useEffect(() => {
+            const handleKeyDown = (e) => {
+              if (screen !== 'game') return;
+              if (e.key.length !== 1 || !/[a-zA-Z]/.test(e.key)) return;
+
+              const currentQ = questions[currentIndex];
+              if (!currentQ) return;
+
+              const targetWord = currentQ.en.toLowerCase();
+              const inputChar = e.key.toLowerCase();
+              const expectedChar = targetWord[currentInput.length];
+
+              // 正解キーを打った場合
+              if (inputChar === expectedChar) {
+                setShowHint(false);
+                setIsError(false);
+                const nextInput = currentInput + inputChar;
+                setCurrentInput(nextInput);
+
+                // 単語クリア判定
+                if (nextInput === targetWord) {
+                  if (currentIndex + 1 < 10) {
+                    // 次の問題へ
+                    setCurrentIndex((prev) => prev + 1);
+                    setCurrentInput('');
+                    setCurrentWordMistakes(0);
+                  } else {
+                    // 10問完了で終了処理
+                    saveHistory(scorePercentage);
+                    setScreen('result');
+                  }
+                }
+              } 
+              // 間違ったキーを打った場合
+              else {
+                setIsError(true);
+                setTimeout(() => setIsError(false), 200);
+
+                setShowHint(true); 
+                
+                // ミスペナルティの計算
+                if (currentWordMistakes < 5) {
+                  setCurrentWordMistakes((prev) => prev + 1);
+                  setScorePercentage((prev) => Math.max(0, prev - 2)); 
+                  
+                  setMistypedWords((prev) => {
+                    if (!prev.some(w => w.en === currentQ.en)) {
+                      return [...prev, currentQ];
+                    }
+                    return prev;
+                  });
+                }
+              }
+            };
+
+            window.addEventListener('keydown', handleKeyDown);
+            return () => window.removeEventListener('keydown', handleKeyDown);
+          }, [screen, questions, currentIndex, currentInput, currentWordMistakes, scorePercentage]);
+
+          // ------------------------------------------
+          // 補助関数
+          // ------------------------------------------
+          const getGradeName = (key) => {
+            if (key === 'pre2') return '準2級';
+            if (key === 'pre2plus') return '準2級プラス';
+            if (key === 'grade2') return '2級';
+            return '';
+          };
+
+          const renderWord = () => {
+            if (!questions[currentIndex]) return null;
+            const targetWord = questions[currentIndex].en;
+            
+            return targetWord.split('').map((char, index) => {
+              // 入力済み
+              if (index < currentInput.length) {
+                return (
+                  <span key={index} className="text-gray-800 mx-1">
+                    {char}
+                  </span>
+                );
+              }
+              
+              // 次に入力する文字
+              if (index === currentInput.length) {
+                if (showHint) {
+                  return (
+                    <span 
+                      key={index} 
+                      className="text-red-500 font-bold scale-125 inline-block transition-transform border-b-4 border-red-500 pb-1 mx-1"
+                    >
+                      {char}
+                    </span>
+                  );
+                } else {
+                  return (
+                    <span 
+                      key={index} 
+                      className="text-transparent border-b-4 border-gray-600 pb-1 mx-1 inline-block min-w-[1ch] text-center"
+                    >
+                      {char}
+                    </span>
+                  );
+                }
+              }
+              
+              // まだ入力していない先の文字
+              return (
+                <span 
+                  key={index} 
+                  className="text-transparent border-b-4 border-gray-300 pb-1 mx-1 inline-block min-w-[1ch] text-center"
+                >
+                  {char}
+                </span>
+              );
+            });
+          };
+
+          // ==========================================
+          // 画面：ロード中またはエラー画面
+          // ==========================================
+          if (loadingError) {
+            return (
+              <div className="flex flex-col items-center justify-center p-4 py-10 w-full max-w-4xl mx-auto">
+                <div className="glass-card p-10 rounded-3xl shadow-2xl max-w-md w-full text-center border-2 border-white">
+                  <div className="text-red-500 font-black text-5xl mb-4">⚠️</div>
+                  <h2 className="text-2xl font-black text-gray-800 mb-3">エラーが発生しました</h2>
+                  <p className="text-red-600 font-bold mb-6">{loadingError}</p>
+                  <p className="text-gray-500 text-sm">words.json ファイルが正しいフォルダに配置されているかご確認ください。</p>
+                </div>
+              </div>
+            );
+          }
+
+          if (!wordDatabase) {
+            return (
+              <div className="flex flex-col items-center justify-center p-4 py-10 w-full max-w-4xl mx-auto">
+                <div className="glass-card p-10 rounded-3xl shadow-2xl max-w-md w-full text-center border-2 border-white bg-white/95">
+                  <div className="animate-spin rounded-full h-14 w-14 border-t-4 border-orange-500 border-solid mx-auto mb-6"></div>
+                  <h2 className="text-2xl font-black text-gray-700 mb-2">データをロード中</h2>
+                  <p className="text-gray-500 font-bold">英単語のデータベースを読み込んでいます...</p>
+                </div>
+              </div>
+            );
+          }
+
+          // ==========================================
+          // 画面：ホーム
+          // ==========================================
+          if (screen === 'home') {
+            return (
+              <div className="flex flex-col items-center justify-center p-4 py-10 w-full max-w-4xl mx-auto">
+                {/* メインメニュー */}
+                <div className="glass-card p-8 md:p-12 rounded-3xl shadow-2xl max-w-lg w-full text-center mb-8 border-2 border-white">
+                  <h1 className="text-5xl font-extrabold text-orange-500 mb-2 tracking-wide font-outfit drop-shadow-sm">
+                    Harupin
+                  </h1>
+                  <h2 className="text-2xl font-black text-gray-700 mb-8">
+                    Typing Master 🎯
+                  </h2>
+                  
+                  <p className="text-gray-600 mb-8 font-bold leading-relaxed">
+                    めざせ！英検2級合格！<br/>どの級にチャレンジする？
+                  </p>
+
+                  <div className="space-y-4">
+                    <button 
+                      onClick={() => selectGradeAndGoToChapters('pre2')}
+                      className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-black py-4 px-6 rounded-2xl shadow-lg transition-transform duration-200 transform hover:-translate-y-1 active:translate-y-0 text-lg btn-hover-transform"
+                    >
+                      🌱 準2級 モード
+                    </button>
+                    <button 
+                      onClick={() => selectGradeAndGoToChapters('pre2plus')}
+                      className="w-full bg-blue-500 hover:bg-blue-600 text-white font-black py-4 px-6 rounded-2xl shadow-lg transition-transform duration-200 transform hover:-translate-y-1 active:translate-y-0 text-lg btn-hover-transform"
+                    >
+                      🚀 準2級プラス モード
+                    </button>
+                    <button 
+                      onClick={() => selectGradeAndGoToChapters('grade2')}
+                      className="w-full bg-pink-500 hover:bg-pink-600 text-white font-black py-4 px-6 rounded-2xl shadow-lg transition-transform duration-200 transform hover:-translate-y-1 active:translate-y-0 text-lg btn-hover-transform"
+                    >
+                      👑 2級 モード
+                    </button>
+                  </div>
+                </div>
+
+                {/* りれきエリア */}
+                <div className="glass-card p-6 rounded-3xl w-full max-w-lg shadow-xl border-2 border-white bg-white/90">
+                  <h3 className="text-xl font-black text-gray-700 mb-4 text-center flex items-center justify-center gap-2">
+                    🏆 最近のチャレンジりれき
+                  </h3>
+                  
+                  {playHistory.length === 0 ? (
+                    <p className="text-gray-500 text-center font-bold py-6 leading-relaxed bg-gray-50 rounded-2xl border border-dashed border-gray-200">
+                      まだりれきはないよ！<br/>プレイしてみよう！
+                    </p>
+                  ) : (
+                    <ul className="space-y-3">
+                      {playHistory.slice(0, 5).map((record) => (
+                        <li key={record.id} className="flex justify-between items-center bg-white py-3.5 px-5 rounded-2xl shadow-sm border border-gray-100 hover:border-orange-200 transition-colors">
+                          <div className="flex flex-col text-left">
+                            <span className="text-gray-400 text-xs font-mono font-bold mb-1">{record.date}</span>
+                            <span className="font-extrabold text-gray-700">
+                              {getGradeName(record.grade)} {record.chapter ? `(Stage ${record.chapter})` : ''}
+                            </span>
+                          </div>
+                          <div className={`text-3xl font-black ${record.score >= 90 ? 'text-pink-500' : record.score >= 70 ? 'text-orange-500' : 'text-blue-500'}`}>
+                            {record.score}%
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </div>
+            );
+          }
+
+          // ==========================================
+          // 画面：チャプター選択
+          // ==========================================
+          if (screen === 'chapter_select') {
+            const gradeWords = wordDatabase[selectedGrade] || [];
+            const uniqueChapters = [...new Set(gradeWords.map(w => w.chapter))].sort((a, b) => a - b);
+            
+            // 最新の履歴から、この級で前回受験したステージを取得
+            const lastChallengedRecord = playHistory.find(record => record.grade === selectedGrade);
+            const lastChallengedStage = lastChallengedRecord ? lastChallengedRecord.chapter : null;
+
+            return (
+              <div className="flex flex-col items-center justify-center p-4 py-10 w-full max-w-4xl mx-auto">
+                <div className="glass-card p-8 md:p-12 rounded-3xl shadow-2xl max-w-lg w-full text-center mb-8 border-2 border-white">
+                  <span className="bg-orange-100 text-orange-600 px-4 py-1.5 rounded-full font-black text-sm border border-orange-200">
+                    {getGradeName(selectedGrade)}
+                  </span>
+                  
+                  <h2 className="text-3xl font-black text-gray-700 mt-5 mb-2 font-sans">
+                    ステージを選ぼう！
+                  </h2>
+                  <p className="text-gray-500 font-bold mb-8 leading-relaxed text-sm">
+                    各ステージは50単語で構成されています。<br/>
+                    その中からランダムで10問出題されます！
+                  </p>
+
+                  <div className="space-y-4">
+                    {uniqueChapters.map((ch) => {
+                      const count = gradeWords.filter(w => w.chapter === ch).length;
+                      const isLastChallenged = lastChallengedStage === ch;
+                      return (
+                        <button 
+                          key={ch}
+                          onClick={() => startGame(selectedGrade, ch)}
+                          className={`w-full bg-white hover:bg-orange-50 border-2 ${isLastChallenged ? 'border-orange-400 bg-orange-50/20' : 'border-gray-200'} hover:border-orange-400 text-gray-700 font-black py-5 px-8 rounded-2xl shadow-md transition-all duration-200 text-left flex justify-between items-center btn-hover-transform`}
+                        >
+                          <div className="flex items-center gap-4 flex-wrap">
+                            <span className="text-2xl font-black text-orange-500 font-outfit">Stage {ch}</span>
+                            {isLastChallenged && (
+                              <span className="bg-orange-500 text-white text-[10px] sm:text-xs font-black px-2.5 py-1 rounded-full shadow-sm animate-pulse flex items-center gap-1 border border-orange-600">
+                                <span>🎯</span> 前回チャレンジ
+                              </span>
+                            )}
+                          </div>
+                          <span className="bg-gray-100 text-gray-500 text-xs font-bold px-3 py-1 rounded-full border">
+                            {count} 単語
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  <button 
+                    onClick={() => setScreen('home')}
+                    className="mt-8 text-gray-500 hover:text-gray-700 font-black text-sm flex items-center justify-center gap-1 mx-auto hover:underline focus:outline-none transition-colors"
+                  >
+                    ◀ もどる（ホームへ）
+                  </button>
+                </div>
+              </div>
+            );
+          }
+
+          // ==========================================
+          // 画面：ゲームプレイ
+          // ==========================================
+          if (screen === 'game') {
+            const currentQ = questions[currentIndex];
+
+            return (
+              <div className={`flex flex-col items-center justify-center p-4 py-10 w-full max-w-4xl mx-auto transition-transform duration-75 ${isError ? 'error-shake' : ''}`}>
+                
+                {/* ヘッダー情報 */}
+                <div className="w-full max-w-3xl flex flex-col sm:flex-row justify-between items-center mb-8 gap-4 px-2">
+                  {/* 中断ボタン */}
+                  <button 
+                    onClick={() => setScreen('home')}
+                    className="bg-white hover:bg-gray-50 text-gray-600 font-extrabold py-3 px-8 rounded-full shadow-md transition-all duration-200 hover:scale-105 active:scale-95 border border-gray-200 self-start sm:self-auto"
+                  >
+                    ◀ やめる (ホームへ)
+                  </button>
+                  
+                  {/* ステータス */}
+                  <div className="flex gap-4">
+                    <div className="bg-white px-6 py-2.5 rounded-full shadow-md font-bold text-gray-700 flex items-center gap-2 border border-gray-100">
+                       <span class="text-lg">⏱</span>
+                       <span className={`text-2xl font-black ${timeLeft <= 10 ? 'text-red-500 animate-pulse' : 'text-gray-700'}`}>
+                         {timeLeft}秒
+                       </span>
+                    </div>
+                    <div className="bg-white px-6 py-2.5 rounded-full shadow-md font-bold text-gray-700 flex items-center gap-2 border border-gray-100">
+                       <span class="text-lg">🎯</span>
+                       <span className="text-2xl font-black text-emerald-500">{scorePercentage}%</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* プレイエリア */}
+                <div className="glass-card p-10 md:p-14 rounded-3xl shadow-2xl max-w-3xl w-full text-center border-2 border-white">
+                  <div className="mb-3 text-orange-400 font-black tracking-widest uppercase text-sm font-outfit">
+                     Question {currentIndex + 1} / 10
+                  </div>
+                  
+                  <div className="text-3xl md:text-4xl font-extrabold text-gray-800 mb-10 min-h-[4rem] flex items-center justify-center leading-relaxed">
+                    {currentQ?.ja}
+                  </div>
+                  
+                  <div className="text-6xl md:text-7xl tracking-widest font-mono mb-10 select-none flex justify-center flex-wrap gap-y-4 font-bold">
+                    {renderWord()}
+                  </div>
+
+                  <div className="h-10 mt-6 flex items-center justify-center">
+                    {showHint ? (
+                      <p className="text-red-500 font-black animate-bounce text-xl bg-red-50 px-6 py-2 rounded-full border border-red-100 shadow-sm">
+                        ヒント💡 赤文字のキーを押してね！
+                      </p>
+                    ) : (
+                      <p className="text-blue-500 font-black text-xl bg-blue-50 px-6 py-2 rounded-full border border-blue-100 shadow-sm animate-pulse">
+                        日本語を見て、英語を打ち込もう！
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          // ==========================================
+          // 画面：リザルト
+          // ==========================================
+          if (screen === 'result') {
+            return (
+              <div className="flex flex-col items-center justify-center p-4 py-10 w-full max-w-4xl mx-auto">
+                <div className="glass-card p-8 md:p-12 rounded-3xl shadow-2xl max-w-2xl w-full border-2 border-white">
+                  
+                  <div className="text-center mb-10">
+                    <h2 className="text-4xl font-black text-gray-800 mb-4">
+                      {timeLeft === 0 ? "⏰ タイムアップ！" : "🎉 おつかれさま！"}
+                    </h2>
+                    <p className="text-xl text-gray-600 font-extrabold mb-2 bg-orange-50 px-4 py-1.5 rounded-full inline-block border border-orange-100">
+                      {getGradeName(selectedGrade)} - Stage {selectedChapter} 結果
+                    </p>
+                    <div className="text-7xl font-black text-emerald-500 my-6 drop-shadow-md font-outfit">
+                      {scorePercentage} <span className="text-4xl font-extrabold">%</span>
+                    </div>
+                    
+                    {scorePercentage >= 90 ? (
+                      <p className="text-pink-500 font-black text-2xl animate-pulse">天才！その調子ではるぴん！✨</p>
+                    ) : scorePercentage >= 70 ? (
+                      <p className="text-orange-500 font-black text-2xl">すごい！あと少しで完璧だよ！💪</p>
+                    ) : (
+                      <p className="text-blue-500 font-black text-2xl">ナイスファイト！復習して次に活かそう！🌟</p>
+                    )}
+                  </div>
+
+                  {/* 復習エリア */}
+                  {mistypedWords.length > 0 && (
+                    <div className="bg-orange-50 rounded-2xl p-6 md:p-8 mb-8 border-2 border-orange-200 shadow-inner">
+                      <h3 className="text-xl font-black text-orange-700 mb-4 flex items-center gap-2">
+                        <span>📝 復習リスト（間違えちゃった単語）</span>
+                      </h3>
+                      <ul className="space-y-3">
+                        {mistypedWords.map((word, idx) => (
+                          <li key={idx} className="flex justify-between items-center bg-white p-4 rounded-xl shadow-sm border border-orange-100">
+                            <span className="font-black text-xl text-gray-800 font-mono">{word.en}</span>
+                            <span className="text-gray-600 font-bold">{word.ja}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {mistypedWords.length === 0 && (
+                    <div className="bg-emerald-50 rounded-2xl p-8 mb-8 border-2 border-emerald-200 text-center shadow-inner">
+                      <p className="text-2xl font-black text-emerald-700 animate-bounce">
+                        パーフェクト！ノーミス達成です！🏆
+                      </p>
+                    </div>
+                  )}
+
+                  {/* アクションボタン */}
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button 
+                      onClick={() => startGame(selectedGrade, selectedChapter)}
+                      className="bg-orange-400 hover:bg-orange-500 text-white font-black py-4 px-8 rounded-2xl shadow-lg text-lg btn-hover-transform"
+                    >
+                      🔄 もう一度（Stage {selectedChapter}）
+                    </button>
+                    <button 
+                      onClick={() => setScreen('home')}
+                      className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-black py-4 px-8 rounded-2xl shadow-lg text-lg btn-hover-transform border border-gray-300"
+                    >
+                      🏠 ホームに戻る
+                    </button>
+                  </div>
+
+                </div>
+              </div>
+            );
+          }
+
+          return null;
+        }
+
+        // Render the App into the root DOM node
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
