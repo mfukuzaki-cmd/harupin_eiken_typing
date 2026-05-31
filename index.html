@@ -81,6 +81,95 @@
           const [playHistory, setPlayHistory] = useState([]);
           const scoreRef = useRef(100); // タイマー終了時に最新スコアを取得するための参照
 
+          // 発音モード（自動発音）の状態管理
+          const [speechEnabled, setSpeechEnabled] = useState(() => {
+            const saved = localStorage.getItem('harupin_speech_enabled');
+            return saved !== null ? JSON.parse(saved) : true;
+          });
+
+          // 発音モードON/OFF切り替え
+          const toggleSpeech = () => {
+            setSpeechEnabled((prev) => {
+              const next = !prev;
+              localStorage.setItem('harupin_speech_enabled', JSON.stringify(next));
+              return next;
+            });
+          };
+
+          // ------------------------------------------
+          // 音声発音処理 (Web Speech API)
+          // ------------------------------------------
+          const speakWord = (text) => {
+            if (!('speechSynthesis' in window)) return;
+            
+            // 再生中の音声をキャンセルして最初から発音
+            window.speechSynthesis.cancel();
+            
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.95; // 高音質な音声のピッチを保ちつつ、聞き取りやすい微減速
+            
+            const voices = window.speechSynthesis.getVoices();
+            
+            // 人間に近い高品質な英語音声の優先度リスト
+            const priorityVoices = [
+              'Google US English',        // Chromeの極めて自然なニューラル音声
+              'Samantha',                 // macOSの非常にクリアなSiri風音声
+              'Alex',                     // macOSの聞き取りやすい高品質男性音声
+              'Daniel',                   // イギリス英語の高品質音声
+              'Microsoft Aria Online',    // Windowsの極めて自然なニューラル音声
+              'en-US',                    // 一般的なアメリカ英語
+              'en-GB'                     // 一般的なイギリス英語
+            ];
+            
+            let selectedVoice = null;
+            
+            // 優先順位リストに従って、最も高品質な音声を探す
+            for (const namePattern of priorityVoices) {
+              selectedVoice = voices.find(v => 
+                v.name.includes(namePattern) && 
+                (v.lang.startsWith('en-') || v.lang.startsWith('en_'))
+              );
+              if (selectedVoice) break;
+            }
+            
+            // 見つからなかった場合のフォールバック
+            if (!selectedVoice) {
+              selectedVoice = voices.find(v => v.lang.startsWith('en-'));
+            }
+            
+            if (selectedVoice) {
+              utterance.voice = selectedVoice;
+            }
+            
+            window.speechSynthesis.speak(utterance);
+          };
+
+          // 音声リストの初期読み込み（ブラウザの非同期読み込み対策）
+          useEffect(() => {
+            if ('speechSynthesis' in window) {
+              window.speechSynthesis.getVoices();
+              const handleVoicesChanged = () => {
+                window.speechSynthesis.getVoices();
+              };
+              window.speechSynthesis.addEventListener('voiceschanged', handleVoicesChanged);
+              return () => window.speechSynthesis.removeEventListener('voiceschanged', handleVoicesChanged);
+            }
+          }, []);
+
+          // ------------------------------------------
+          // 出題時の自動発音
+          // ------------------------------------------
+          useEffect(() => {
+            if (screen === 'game' && questions[currentIndex] && speechEnabled) {
+              // 画面遷移や問題切り替え時のUI描画とシンクロさせるためわずかにディレイを挿入
+              const timer = setTimeout(() => {
+                speakWord(questions[currentIndex].en);
+              }, 100);
+              return () => clearTimeout(timer);
+            }
+          }, [screen, currentIndex, questions, speechEnabled]);
+
           // ------------------------------------------
           // 初期化：単語データを外部JSONから非同期ロード
           // ------------------------------------------
@@ -356,9 +445,23 @@
                     Typing Master 🎯
                   </h2>
                   
-                  <p className="text-gray-600 mb-8 font-bold leading-relaxed">
+                  <p className="text-gray-600 mb-6 font-bold leading-relaxed">
                     めざせ！英検2級合格！<br/>どの級にチャレンジする？
                   </p>
+                  
+                  {/* 発音モードトグルスイッチ */}
+                  <div className="flex items-center justify-center gap-3 bg-orange-50/70 border border-orange-100 px-5 py-3 rounded-2xl mb-8 max-w-xs mx-auto shadow-sm">
+                    <span className="text-gray-700 font-extrabold text-sm flex items-center gap-1.5 select-none">
+                      {speechEnabled ? '🔊' : '🔇'} 出題時に自動発音
+                    </span>
+                    <button 
+                      onClick={toggleSpeech}
+                      className={`w-12 h-6 flex items-center rounded-full p-0.5 duration-300 cursor-pointer focus:outline-none ${speechEnabled ? 'bg-orange-500 justify-end' : 'bg-gray-300 justify-start'}`}
+                      aria-label="発音モード切り替え"
+                    >
+                      <span className="bg-white w-5 h-5 rounded-full shadow-md transform duration-300"></span>
+                    </button>
+                  </div>
 
                   <div className="space-y-4">
                     <button 
@@ -435,10 +538,24 @@
                   <h2 className="text-3xl font-black text-gray-700 mt-5 mb-2 font-sans">
                     ステージを選ぼう！
                   </h2>
-                  <p className="text-gray-500 font-bold mb-8 leading-relaxed text-sm">
+                  <p className="text-gray-500 font-bold mb-6 leading-relaxed text-sm">
                     各ステージは50単語で構成されています。<br/>
                     その中からランダムで10問出題されます！
                   </p>
+                  
+                  {/* 発音モードトグルスイッチ */}
+                  <div className="flex items-center justify-center gap-3 bg-orange-50/70 border border-orange-100 px-5 py-3 rounded-2xl mb-8 max-w-xs mx-auto shadow-sm">
+                    <span className="text-gray-700 font-extrabold text-sm flex items-center gap-1.5 select-none">
+                      {speechEnabled ? '🔊' : '🔇'} 出題時に自動発音
+                    </span>
+                    <button 
+                      onClick={toggleSpeech}
+                      className={`w-12 h-6 flex items-center rounded-full p-0.5 duration-300 cursor-pointer focus:outline-none ${speechEnabled ? 'bg-orange-500 justify-end' : 'bg-gray-300 justify-start'}`}
+                      aria-label="発音モード切り替え"
+                    >
+                      <span className="bg-white w-5 h-5 rounded-full shadow-md transform duration-300"></span>
+                    </button>
+                  </div>
 
                   <div className="space-y-4">
                     {uniqueChapters.map((ch) => {
@@ -517,8 +634,21 @@
                      Question {currentIndex + 1} / 10
                   </div>
                   
-                  <div className="text-3xl md:text-4xl font-extrabold text-gray-800 mb-10 min-h-[4rem] flex items-center justify-center leading-relaxed">
-                    {currentQ?.ja}
+                  <div className="flex flex-col items-center mb-8">
+                    <div className="text-3xl md:text-4xl font-extrabold text-gray-800 min-h-[4rem] flex items-center justify-center leading-relaxed text-center">
+                      {currentQ?.ja}
+                    </div>
+                    
+                    {/* 手動再発音ボタン */}
+                    <button 
+                      onClick={() => speakWord(currentQ?.en)}
+                      className="mt-3 bg-orange-100 hover:bg-orange-200 active:bg-orange-300 text-orange-600 font-black p-3.5 rounded-full shadow-sm hover:scale-105 active:scale-95 transition-all duration-200 flex items-center justify-center border border-orange-200 focus:outline-none"
+                      title="発音をもう一度きく"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                      </svg>
+                    </button>
                   </div>
                   
                   <div className="text-6xl md:text-7xl tracking-widest font-mono mb-10 select-none flex justify-center flex-wrap gap-y-4 font-bold">
