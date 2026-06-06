@@ -274,12 +274,16 @@
                 setTimeLeft((prev) => prev - 1);
               }, 1000);
             } else if (screen === 'game' && timeLeft === 0) {
-              // タイムアップで終了処理
-              saveHistory(scoreRef.current);
+              // タイムアップで終了処理（未解答の問題1問につき10%を減算する新ルール）
+              const unansweredCount = 10 - currentIndex;
+              const finalScore = Math.max(0, scorePercentage - unansweredCount * 10);
+              
+              setScorePercentage(finalScore);
+              saveHistory(finalScore);
               setScreen('result');
             }
             return () => clearInterval(timer);
-          }, [screen, timeLeft]);
+          }, [screen, timeLeft, currentIndex, scorePercentage]);
 
           // ------------------------------------------
           // キーボード入力処理
@@ -287,6 +291,44 @@
           useEffect(() => {
             const handleKeyDown = (e) => {
               if (screen !== 'game') return;
+
+              // スペースキー押下時の制御
+              if (e.key === ' ' || e.key === 'Spacebar') {
+                e.preventDefault(); // ブラウザデフォルトのキー操作を防止
+
+                const currentQ = questions[currentIndex];
+                if (currentQ) {
+                  const targetWord = currentQ.en.toLowerCase();
+                  const expectedChar = targetWord[currentInput.length];
+
+                  // イディオム入力において、今入力すべき文字が「スペース」である場合
+                  if (expectedChar === ' ') {
+                    // 正解としてタイピング処理を進める（音声は鳴らさない）
+                    setShowHint(false);
+                    setIsError(false);
+                    const nextInput = currentInput + ' ';
+                    setCurrentInput(nextInput);
+
+                    if (nextInput === targetWord) {
+                      if (currentIndex + 1 < 10) {
+                        setCurrentIndex((prev) => prev + 1);
+                        setCurrentInput('');
+                        setCurrentWordMistakes(0);
+                      } else {
+                        saveHistory(scorePercentage);
+                        setScreen('result');
+                      }
+                    }
+                  } else {
+                    // 通常の入力場所、あるいは間違ってスペースキーを押した場合は、
+                    // 音声（発音）再生ショートカットとして動作させ、タイプミス判定（減点等）は行わない
+                    speakWord(currentQ.en);
+                  }
+                }
+                return; // スペース処理はここで終了
+              }
+
+              // スペース以外の通常のキー入力処理（英字のみ許可）
               if (e.key.length !== 1 || !/[a-zA-Z]/.test(e.key)) return;
 
               const currentQ = questions[currentIndex];
@@ -347,7 +389,8 @@
           // 補助関数
           // ------------------------------------------
           const getGradeName = (key) => {
-            if (key === 'pre2') return '準2級';
+            if (key === 'pre2') return '準2級 単語';
+            if (key === 'pre2_idioms') return '準2級 イディオム';
             if (key === 'pre2plus') return '準2級プラス';
             if (key === 'grade2') return '2級';
             return '';
@@ -358,11 +401,15 @@
             const targetWord = questions[currentIndex].en;
             
             return targetWord.split('').map((char, index) => {
+              const isSpace = char === ' ';
+              // スペースの場合は可視化記号「␣」を表示してタイピングしやすくする
+              const displayChar = isSpace ? '␣' : char;
+
               // 入力済み
               if (index < currentInput.length) {
                 return (
-                  <span key={index} className="text-gray-800 mx-1">
-                    {char}
+                  <span key={index} className={`${isSpace ? 'text-gray-400 font-light' : 'text-gray-800'} mx-1`}>
+                    {displayChar}
                   </span>
                 );
               }
@@ -373,18 +420,18 @@
                   return (
                     <span 
                       key={index} 
-                      className="text-red-500 font-bold scale-125 inline-block transition-transform border-b-4 border-red-500 pb-1 mx-1"
+                      className={`text-red-500 font-bold scale-125 inline-block transition-transform border-b-4 border-red-500 pb-1 mx-1 ${isSpace ? 'bg-red-50 px-1 rounded' : ''}`}
                     >
-                      {char}
+                      {displayChar}
                     </span>
                   );
                 } else {
                   return (
                     <span 
                       key={index} 
-                      className="text-transparent border-b-4 border-gray-600 pb-1 mx-1 inline-block min-w-[1ch] text-center"
+                      className={`${isSpace ? 'text-orange-500 font-bold bg-orange-50/50' : 'text-transparent'} border-b-4 border-orange-400 pb-1 mx-1 inline-block min-w-[1ch] text-center`}
                     >
-                      {char}
+                      {displayChar}
                     </span>
                   );
                 }
@@ -394,7 +441,7 @@
               return (
                 <span 
                   key={index} 
-                  className="text-transparent border-b-4 border-gray-300 pb-1 mx-1 inline-block min-w-[1ch] text-center"
+                  className={`text-transparent border-b-4 ${isSpace ? 'border-dashed border-gray-400' : 'border-gray-300'} pb-1 mx-1 inline-block min-w-[1ch] text-center`}
                 >
                   {char}
                 </span>
@@ -468,7 +515,13 @@
                       onClick={() => selectGradeAndGoToChapters('pre2')}
                       className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-black py-4 px-6 rounded-2xl shadow-lg transition-transform duration-200 transform hover:-translate-y-1 active:translate-y-0 text-lg btn-hover-transform"
                     >
-                      🌱 準2級 モード
+                      🌱 準2級 単語 モード
+                    </button>
+                    <button 
+                      onClick={() => selectGradeAndGoToChapters('pre2_idioms')}
+                      className="w-full bg-teal-500 hover:bg-teal-600 text-white font-black py-4 px-6 rounded-2xl shadow-lg transition-transform duration-200 transform hover:-translate-y-1 active:translate-y-0 text-lg btn-hover-transform"
+                    >
+                      📖 準2級 イディオム モード
                     </button>
                     <button 
                       onClick={() => selectGradeAndGoToChapters('pre2plus')}
@@ -539,7 +592,7 @@
                     ステージを選ぼう！
                   </h2>
                   <p className="text-gray-500 font-bold mb-6 leading-relaxed text-sm">
-                    各ステージは50単語で構成されています。<br/>
+                    各ステージは50{selectedGrade.includes('idioms') ? '熟語' : '単語'}で構成されています。<br/>
                     その中からランダムで10問出題されます！
                   </p>
                   
@@ -607,7 +660,11 @@
                 <div className="w-full max-w-3xl flex flex-col sm:flex-row justify-between items-center mb-8 gap-4 px-2">
                   {/* 中断ボタン */}
                   <button 
-                    onClick={() => setScreen('home')}
+                    onClick={(e) => {
+                      setScreen('home');
+                      e.currentTarget.blur();
+                    }}
+                    tabIndex="-1"
                     className="bg-white hover:bg-gray-50 text-gray-600 font-extrabold py-3 px-8 rounded-full shadow-md transition-all duration-200 hover:scale-105 active:scale-95 border border-gray-200 self-start sm:self-auto"
                   >
                     ◀ やめる (ホームへ)
@@ -641,7 +698,11 @@
                     
                     {/* 手動再発音ボタン */}
                     <button 
-                      onClick={() => speakWord(currentQ?.en)}
+                      onClick={(e) => {
+                        speakWord(currentQ?.en);
+                        e.currentTarget.blur();
+                      }}
+                      tabIndex="-1"
                       className="mt-3 bg-orange-100 hover:bg-orange-200 active:bg-orange-300 text-orange-600 font-black p-3.5 rounded-full shadow-sm hover:scale-105 active:scale-95 transition-all duration-200 flex items-center justify-center border border-orange-200 focus:outline-none"
                       title="発音をもう一度きく"
                     >
