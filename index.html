@@ -15,7 +15,7 @@
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
     <!-- Babel Standalone CDN for in-browser JSX compilation -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7/babel.min.js"></script>
     <style>
         /* Custom font and scrollbar matching keio_quiz style guidelines */
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
@@ -96,64 +96,75 @@
             });
           };
 
+          // 音声リストをrefで保持（非同期ロード対策）
+          const voicesRef = useRef([]);
+
           // ------------------------------------------
           // 音声発音処理 (Web Speech API)
           // ------------------------------------------
           const speakWord = (text) => {
             if (!('speechSynthesis' in window)) return;
-            
-            // 再生中の音声をキャンセルして最初から発音
             window.speechSynthesis.cancel();
-            
+
             const utterance = new SpeechSynthesisUtterance(text);
             utterance.lang = 'en-US';
-            utterance.rate = 0.95; // 高音質な音声のピッチを保ちつつ、聞き取りやすい微減速
-            
-            const voices = window.speechSynthesis.getVoices();
-            
-            // 人間に近い高品質な英語音声の優先度リスト
-            const priorityVoices = [
-              'Google US English',        // Chromeの極めて自然なニューラル音声
-              'Samantha',                 // macOSの非常にクリアなSiri風音声
-              'Alex',                     // macOSの聞き取りやすい高品質男性音声
-              'Daniel',                   // イギリス英語の高品質音声
-              'Microsoft Aria Online',    // Windowsの極めて自然なニューラル音声
-              'en-US',                    // 一般的なアメリカ英語
-              'en-GB'                     // 一般的なイギリス英語
+            utterance.rate = 0.95;
+
+            const voices = voicesRef.current.length > 0
+              ? voicesRef.current
+              : window.speechSynthesis.getVoices();
+
+            // macOSの玩具・ロボット音声ブロックリスト
+            const blocklist = [
+              'Albert', 'Bad News', 'Bahh', 'Boing', 'Bubbles', 'Cellos',
+              'Good News', 'Junior', 'Kathy', 'Ralph', 'Zarvox', 'Fred',
+              'ささやき声', 'オルガン', 'スーパースター', 'トリノイド', 'ベル', '道化', '震え'
             ];
-            
+            const isHuman = (v) => !blocklist.some(b => v.name === b);
+            const isEnglish = (v) => v.lang.startsWith('en-') || v.lang.startsWith('en_');
+
             let selectedVoice = null;
-            
-            // 優先順位リストに従って、最も高品質な音声を探す
-            for (const namePattern of priorityVoices) {
-              selectedVoice = voices.find(v => 
-                v.name.includes(namePattern) && 
-                (v.lang.startsWith('en-') || v.lang.startsWith('en_'))
-              );
-              if (selectedVoice) break;
-            }
-            
-            // 見つからなかった場合のフォールバック
+
+            // 1. Neural/クラウド音声（Chrome: Google US English など）- 最高品質
+            selectedVoice = voices.find(v => !v.localService && v.lang.startsWith('en-US'));
+
+            // 2. Neural英語音声（US以外も含む）
             if (!selectedVoice) {
-              selectedVoice = voices.find(v => v.lang.startsWith('en-'));
+              selectedVoice = voices.find(v => !v.localService && isEnglish(v));
             }
-            
-            if (selectedVoice) {
-              utterance.voice = selectedVoice;
+
+            // 3. ローカル高品質音声（名前で指定）
+            if (!selectedVoice) {
+              const preferred = ['Samantha', 'Alex', 'Reed', 'Eddy', 'Flo', 'Daniel', 'Karen', 'Moira'];
+              for (const name of preferred) {
+                selectedVoice = voices.find(v => v.name.includes(name) && isEnglish(v));
+                if (selectedVoice) break;
+              }
             }
-            
+
+            // 4. 玩具音声を除いたen-US音声
+            if (!selectedVoice) {
+              selectedVoice = voices.find(v => v.lang.startsWith('en-US') && isHuman(v));
+            }
+
+            // 5. 最終フォールバック：任意の英語音声
+            if (!selectedVoice) {
+              selectedVoice = voices.find(v => isEnglish(v));
+            }
+
+            if (selectedVoice) utterance.voice = selectedVoice;
             window.speechSynthesis.speak(utterance);
           };
 
-          // 音声リストの初期読み込み（ブラウザの非同期読み込み対策）
+          // 音声リストの初期読み込み＆変更時に更新
           useEffect(() => {
             if ('speechSynthesis' in window) {
-              window.speechSynthesis.getVoices();
-              const handleVoicesChanged = () => {
-                window.speechSynthesis.getVoices();
+              const loadVoices = () => {
+                voicesRef.current = window.speechSynthesis.getVoices();
               };
-              window.speechSynthesis.addEventListener('voiceschanged', handleVoicesChanged);
-              return () => window.speechSynthesis.removeEventListener('voiceschanged', handleVoicesChanged);
+              loadVoices();
+              window.speechSynthesis.addEventListener('voiceschanged', loadVoices);
+              return () => window.speechSynthesis.removeEventListener('voiceschanged', loadVoices);
             }
           }, []);
 
@@ -673,13 +684,13 @@
                   {/* ステータス */}
                   <div className="flex gap-4">
                     <div className="bg-white px-6 py-2.5 rounded-full shadow-md font-bold text-gray-700 flex items-center gap-2 border border-gray-100">
-                       <span class="text-lg">⏱</span>
+                       <span className="text-lg">⏱</span>
                        <span className={`text-2xl font-black ${timeLeft <= 10 ? 'text-red-500 animate-pulse' : 'text-gray-700'}`}>
                          {timeLeft}秒
                        </span>
                     </div>
                     <div className="bg-white px-6 py-2.5 rounded-full shadow-md font-bold text-gray-700 flex items-center gap-2 border border-gray-100">
-                       <span class="text-lg">🎯</span>
+                       <span className="text-lg">🎯</span>
                        <span className="text-2xl font-black text-emerald-500">{scorePercentage}%</span>
                     </div>
                   </div>
