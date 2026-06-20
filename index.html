@@ -640,7 +640,7 @@
                             )}
                           </div>
                           <span className="bg-gray-100 text-gray-500 text-xs font-bold px-3 py-1 rounded-full border">
-                            {count} 単語
+                            {count} {selectedGrade.includes('idioms') ? '熟語' : '単語'}
                           </span>
                         </button>
                       );
